@@ -1,0 +1,80 @@
+---
+import Text from "./system/Text.astro";
+import Sal from "./system/Sal.astro";
+import Button from "./system/Button.astro";
+import { Image } from "astro:assets";
+import scribble from "../fillers/scribble.png";
+---
+
+<Sal preset="slide-up">
+  <Text type="h1" class="text-white flex flex-row flex-wrap">
+    <div class="flex-shrink-0">Fostering Curious</div>
+    <div class="pl-3"></div>
+    <div class="flex gap-3">
+      <div
+        class={`text-primary relative overflow-hidden text-container h-[80px] w-[600px] max-sm:h-[40px]`}
+      >
+        <div
+          class="text translate-y-[62px] opacity-0 duration-700 ease-in-out relative"
+        >
+          <span class="relative">
+            <!-- <div class="absolute w-full bg-yellow-50 bottom-6 left-0 max-md:bottom-4 ">
+              <Image src={scribble} class="absolute w-full h-[10px] object-fill" alt="decorative element" />
+            </div> -->
+            <span class="relative z-10">
+              Thinkers
+            </span>
+          </span>
+        </div>
+        <div
+          class="text -translate-y-[42px] opacity-0 duration-700 ease-in-out"
+        >
+          <span class="relative z-10">
+            <span class="relative">
+              <!-- <div class="absolute w-full bg-yellow-50 bottom-6 left-0 max-md:bottom-4 ">
+                <Image src={scribble} class="absolute w-full h-[10px] object-fill" alt="decorative element" />
+              </div> -->
+              <span class="relative z-10">
+                Explorers
+              </span>
+            </span>
+          </span>
+        </div>
+        <div class="text -translate-y-[42px] opacity-0 duration-700 ease-in-out">
+          <span class="relative z-10">
+            <span class="relative">
+              <!-- <div class="absolute w-full bg-yellow-50 bottom-6 left-0 max-md:bottom-4 ">
+                <Image src={scribble} class="absolute w-full h-[10px] object-fill" alt="decorative element" />
+              </div> -->
+              <span class="relative z-10">
+                Innovators
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </Text>
+</Sal>
+<div class="pt-1 max-md:pt-2"></div>
+<Sal preset="slide-up" d={400} class="w-full">
+  <Text type="base">
+    Empowering Minds through Exploration and <br class="hidden max-md:block" />
+    Innovation
+  </Text>
+</Sal>
+
+<div class="pt-5"></div>
+
+<!-- <Button>Enquire Now</Button> -->
+
+<style>
+  .text {
+    position: absolute;
+    inset: 0;
+    /* transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s; */
+  }
+</style>
+<script>
+  document.addEventListener("astro:beforeload", () => init());
+</script>

@@ -1,0 +1,48 @@
+---
+import Text from '../system/Text.astro'
+import Image from 'astro:assets'
+
+const {
+  image,
+  title,
+  bodyContent,
+  bulletPoints,
+  layout="left"
+} = Astro.props
+---
+
+<div class:list={[
+  "flex flex-col h-full w-full flex-1 p-6",
+  layout === 'right' && "max-md:order-2"
+]}>
+  <div class="p-3 max-md:p-0"></div>
+  <div class:list={[
+    "flex-1 relative w-full max-md:left-0",
+    layout === 'right' ? "left-[43px]" : "-left-[43px]"
+  ]}>
+    <Text type="h2">
+      {title[0]}<br/>
+      <span class="!not-italic">{title[1]}</span>
+    </Text>
+    <div class="p-4 max-md:p-1" />
+    <Text type="regular">
+      {bodyContent}
+    </Text>
+    <div class="p-2" />
+    <div class="flex w-full flex-col gap-4">
+      {bulletPoints.map(point => (
+        <div class="flex flex-row items-start">
+          <div class="w-[14px] h-[17px] flex-shrink-0 top-[6px] relative">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 17" fill="none">
+              <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="#1B2226"/>
+            </svg>
+          </div>
+          <div class="px-2"></div>
+          <Text type="regular">
+            {point}
+          </Text>
+        </div>
+      ))}
+    </div>
+    <div class="p-3 max-md:p-0" />
+</div>

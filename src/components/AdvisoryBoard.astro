@@ -1,0 +1,96 @@
+---
+import Carousel from "./system/Carousel.astro";
+import CarouselCard from "./system/CarouselCard.astro";
+import Section from "./system/Section.astro";
+import Text from "./system/Text.astro";
+import ajitMontagony from '../image/about-us/advisory/Ajit Montagony.jpeg';
+import jagdeesh from '../image/about-us/advisory/Dr Jagdeesh.jpeg'
+import neelkantappa from '../image/about-us/advisory/Major Neelkantappa.jpg'
+import holla from '../image/about-us/advisory/Malathi Holla.jpeg'
+import pawan from '../image/about-us/advisory/Pawan Kumar.jpeg'
+import rajeev from '../image/about-us/advisory/Rajeev Gowda.jpeg'
+import saswathi from '../image/about-us/advisory/saswathi belliyappa.jpeg'
+
+import { Image } from "astro:assets";
+
+const advisory = [
+  {
+    name: "Major General B.S Nealakantappa",
+    description: "Veteran of the Indo-Pak wars, served 35 years in the Indian Army; associated with Runto Projects and Lemon Cements Ltd.",
+    image: neelkantappa
+  },
+  {
+    name: "Saswathi Belliyappa",
+    description: "Experienced urban planner and consultant with U.N Habitat and World Bank; trustee of Samvad Foundation; Ph.D. candidate.",
+    image: saswathi
+  },
+  {
+    name: "Pawan Kumar",
+    description: "Renowned Kannada film director and actor; founder of Act or Productions theater; multiple award recipient, including for the film Lucia.",
+    image: pawan
+  },
+  {
+    name: "Dr. A. Jagdeesh",
+    description: "Established psychiatrist; founder of Abaya Hospital and institutes; former HOD of psychiatry at K.I.M.S; published author.",
+    image: jagdeesh
+  },
+  {
+    name: "Ajit Mantagani",
+    description: "Former CEO at several prominent companies; BE from Suratkal, IIM(A) alumnus; accredited business mentor and founder of Gameplan Consultancy.",
+    image: ajitMontagony
+  },
+  {
+    name: "Prof Rajeev Gowda",
+    description: "IIM(B) professor; Indian National Congress spokesperson; RBI and GIC director; Wharton PhD; global educator and author.",
+    image: rajeev
+  },
+  {
+    name: "Dr. Malathi K Holla",
+    description: "International Para Athlete; Padmashri and Arjun Awardee; Syndicate Bank Chief Manager; NGO founder; motivational speaker.",
+    image: holla
+  },
+]
+---
+<Section>
+  <Text type="h2" class="text-center">Our <span>Advisory</span> Board</Text>
+  <div class="pt-[38px]"></div>
+  <div class="overflow-hidden rounded-lg">
+    <Carousel
+      arrowsContainerClass="mt-4"
+      class="gap-1 overflow-scroll"
+      id="advisory-team-carousel"
+    >
+      {
+        advisory.map((advisor) => (
+          <CarouselCard>
+            <div class="w-[540px] max-md:w-[95vw] max-md:h-[320px] h-[525px] bg-black/30 text-center relative text-white">
+              <div class="absolute top-0 left-0 w-full h-full">
+                <Image
+                  src={advisor.image}
+                  class="w-full h-full object-cover object-top"
+                  alt={advisor.name}
+                />
+              </div>
+              <div
+                class="absolute w-full h-full pb-[34px] flex flex-col justify-end max-md:pt-0 max-md:justify-end max-md:pb-[10px] pb-unset items-start px-[35px]"
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 28.7%, #000 100%)",
+                }}
+              >
+                <Text type="lg" class="max-md:w-[90%] text-primary text-start">
+                  {advisor.name}
+                </Text>
+                <div class="pt-2" />
+                <Text type="base" class="max-md:w-[90%] text-start">
+                  {advisor.description}
+                </Text>
+                <div class="pt-2" />
+              </div>
+            </div>
+          </CarouselCard>
+        ))
+      }
+    </Carousel>
+  </div>
+</Section>

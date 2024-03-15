@@ -1,0 +1,74 @@
+---
+import Section from "./system/Section.astro";
+import Text from "./system/Text.astro";
+
+import achievementsBG from "../image/textures/achievementsBG.png";
+import topper1 from "../image/homepage/topper1.png";
+import topper2 from "../image/homepage/topper2.png";
+import TopperCard from "./TopperCard.astro";
+
+
+const toppers = [
+  {
+    name: "Gaurav Vishant Naik",
+    ranks: "Rank 1",
+    marks: "98%",
+    image: topper1,
+    year: "2022-23 batch",
+  },
+  {
+    name: "Laksh S. ",
+    ranks: "Rank 2",
+    marks: "96%",
+    image: topper2,
+    year: "2021-22 batch",
+  },
+  {
+    name: "Akshitha",
+    ranks: "Rank 3",
+    marks: "90%",
+    image: topper1,
+    year: "2021-22 batch",
+  },
+  {
+    name: "Ateeksh",
+    ranks: "Rank 4",
+    marks: "89%",
+    image: topper2,
+    year: "2022-23 batch",
+  },
+];
+
+---
+
+<Section
+  class="text-center"
+  style={{
+    background: `url("${achievementsBG.src}")`,
+    backgroundSize: "cover",
+  }}
+>
+  <div class="pt-[30px]"></div>
+  <Text type="subtitle">INSPIRING FEATS</Text>
+  <p class="p-2"></p>
+  <Text type="h2">
+    Celebrating <span>Achievements</span>
+  </Text>
+  <p class="p-3"></p>
+  <Text type="base" class="text-center">
+    We take immense pride in celebrating academic triumphs that reflect the
+    students’ dedication.
+  </Text>
+</Section>
+<p class="p-3"></p>
+<div class="flex items-center justify-center">
+  <div
+    class="flex gap-[2px] overflow-scroll w-full max-sm:flex-col max-sm:items-center max-sm:gap-[16px] max-w-[1200px] margin-auto"
+  >
+    {
+      toppers?.map((item, index) => {
+        return <TopperCard topper={item} />;
+      })
+    }
+  </div>
+</div>

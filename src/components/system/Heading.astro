@@ -1,0 +1,41 @@
+---
+import Star from "../icons/Star.astro";
+import Text from "./Text.astro";
+
+const {first, second, className, subtitle,subtitleClass} = Astro.props;
+---
+
+{
+    subtitle ? <div class={`flex gap-4 flex-col items-center font-display ${className}`}>
+                    <Text type={'subtitle'} class={`text-black-100 font-semibold tracking-[1.8px] text-lg ${subtitleClass} balance`}>{subtitle}</Text>
+                    <div class="flex flex-row gap-4 items-center justify-start shrink-0 relative max-sm:gap-1 ">
+                    <span class="text-[#F5CC4F] w-[33px] h-[31px]">
+                        <Star />
+                    </span>
+                    <slot name="title">
+                        <h2 class="text-neutral-dark-grey text-5xl font-bold text-center max-md:text-4xl max-md:text-[36px] max-sm:text-3xl ">
+                            {first}&nbsp;
+                            <span class="font-4 text-primary">{second}</span>
+                        </h2>
+                    </slot>
+                    <span class="text-[#F5CC4F] w-[33px] h-[31px]">
+                        <Star />
+                    </span>
+                </div>
+                </div> :  <div class="flex flex-row gap-4 items-center justify-start shrink-0 relative font-display">
+                                <span class="text-[#F5CC4F] w-[33px] h-[31px]">
+                                    <Star />
+                                </span>
+                                <slot>
+                                    <h2 class="text-neutral-dark-grey text-5xl font-bold max-md:text-4xl max-md:text-[36px] max-sm:text-3xl text-center max-sm:gap-1">
+                                        {first}&nbsp;
+                                        <span class="font-4 text-primary">{second}</span>
+                                    </h2>
+                                </slot>
+            
+                                <span class="text-[#F5CC4F] w-[33px] h-[31px]">
+                                    <Star />
+                                </span>
+                            </div>
+       
+}

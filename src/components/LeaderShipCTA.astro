@@ -1,0 +1,56 @@
+---
+import Button from "./system/Button.astro";
+import Heading from "./system/Heading.astro";
+import config from "../../config"
+import Constrain from "./system/Constrain.astro";
+
+const leadership = config.leadership.data.government
+
+const LeaderShip = [
+   {
+      image: "",
+      name: 'Mr. S. K. Gupdta',
+   }
+]
+---
+
+<Constrain>
+   
+   <div class=`w-full h-full bg-primary rounded-3xl p-l pb-0 relative flex flex-col items-center gap-l overflow-clip max-sm:p-r`>
+      
+      <Heading 
+         first="Our"
+         className="z-10"
+         second="Leadership"
+         subtitle="leaders at insight"
+         subtitleClass="text-white"
+      >
+         <h2 slot="title" class="text-white text-5xl font-bold text-center max-md:text-4xl max-md:text-[36px] max-sm:text-3xl ">
+            Our
+            <span class="font-4 text-yellow">Leadership</span>
+         </h2>
+      </Heading>
+      <div class="flex gap-r">
+        {
+         leadership?.map(item => {
+               return <div class="max-h-[300px] max-w-[200px] rounded-[27px] overflow-clip border-[2px] bg-white" style={{
+               }}>
+                           <img  src={item.image} alt={`A Image of ${item.name}`} class="h-full object-cover"/>
+                     </div>
+         })
+        }
+   
+      </div>
+      <div class="absolute bottom-0 h-full w-full" style="background: linear-gradient(180deg, rgba(0, 107, 179, 0.00) 0%, #006BB3 100%);"></div>
+      <div class="absolute top-[70%] left-[50%] translate-x-[-50%]">
+         <a href="/leadership">
+            <Button
+               type="yellow">
+               <span class="text-shades-blue-dark">
+                  Read More
+               </span>
+            </Button>
+         </a>
+      </div>
+   </div>
+</Constrain>

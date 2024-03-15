@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets"
+const { layout, image, alt } = Astro.props
+---
+<div
+  class:list={[
+    `w-[58%] flex-1 bg-red-300 rounded-2xl relative -top-[40px] 
+    items-stretch overflow-hidden max-md:w-full max-md:top-0 
+    max-md:left-0 max-md:rounded-tl-2xl max-md:rounded-tr-2xl max-md:h-[240px]
+    max-md:rounded-b-[0px]
+    `,
+    layout === 'right' ? "left-[50px] rounded-tr-[160px]" : "-left-[50px] rounded-tl-[160px]"
+    ]}
+>
+  <Image src={image} alt={alt} class="w-full h-full object-cover max-md:h-[240px]" />
+</div>

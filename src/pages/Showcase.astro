@@ -1,0 +1,242 @@
+---
+import { Image } from "astro:assets";
+import Text from "../components/system/Text.astro";
+import Sal from "../components/system/Sal.astro";
+import Section from "../components/system/Section.astro";
+import CarouselCard from "../components/system/CarouselCard.astro";
+import Carousel from "../components/system/Carousel.astro";
+import carouselTemp from "../images/carouselTemp.png";
+import fb from "../icons/facebook.svg?raw"
+ 
+import yogaDay from "../image/updates/yoga.jpeg";
+import hindidivas from "../image/updates/hindi divas.jpg";
+import mother from "../image/updates/mother toddler.jpg";
+import ganesh from "../image/updates/ganesh.jpg";
+
+import scribble1 from "../fillers/scribble1.svg";
+
+const config = [
+  { img: mother, title: "Mother Toddler Session" },
+  { img: ganesh, title: "Gowri Ganesha Celebrations" },
+  { img: hindidivas, title: "Hindi Divas Celebration" },
+  { img: yogaDay, title: "Celebration of Yoga Day" },
+];
+const { title, showSocial = true } = Astro.props;
+const heading = title || "Featured Updates";
+---
+
+<Section
+  class="text-black py-9 pr-0"
+  style={{
+    background:
+      "linear-gradient(180deg, rgba(255, 227, 193, 0.35) 0%, rgba(244, 179, 62, 0.10) 100%)",
+  }}
+>
+  <div
+    class="w-full flex flex-row max-md:flex-col max-md:items-start justify-between items-center pr-9 max-md:pr-0"
+  >
+    <Sal preset="slide-up">
+      <Text type="h2">Featured <span>Updates</span></Text>
+    </Sal>
+    <Sal preset="slide-up" d={300} class="flex flex-row">
+      <Text type="lg">
+        Follow 
+      </Text>
+      <div class="px-1"></div>
+      <Text type="lg">
+        <a href="https://www.facebook.com/Edifyschoolecity/" target="_blank" class="flex flex-row text-primary">
+          @EdifyEcity
+          <div class="px-1"></div>
+    
+          <div class="w-[30px] h-[30px] text-[#0B88EF] max-sm:w-[28px] max-sm:h-[28px]">
+            <Fragment set:html={fb} />
+          </div>
+        </a>
+      </Text>
+      <div class="px-1"></div>
+
+      
+      <Text type="lg">
+        for more updates!
+      </Text>
+    </Sal>
+  </div>
+  <p class="p-4 max-md:p-2"></p>
+  <Sal preset="fade">
+    <Carousel
+      class="gap-6 pt-4 pl-4"
+      id="featured-updates"
+      arrowsContainerClass="mt-4"
+    >
+      {
+        config.map((image, index) => (
+          <CarouselCard>
+            <div class="relative">
+              <Image
+                src={image.img}
+                alt="Carousel Temp Image"
+                class="w-[500px] h-[350px] max-md:w-[250px] max-md:h-[280px] object-cover object-center rounded-lg"
+              />
+              {index % 2 === 0 && (
+                <Image
+                  src={scribble1}
+                  alt="scribble"
+                  class="absolute -top-[15px] -left-[10px]"
+                />
+              )}
+              {index % 2 === 1 && (
+                <Image
+                  src={scribble1}
+                  alt="scribble"
+                  class="absolute -bottom-[15px] -right-[15px]"
+                />
+              )}
+            </div>
+            <Text type="lg" class="text-[#1B2226]/70 mt-[18px]">
+              {image.title}
+            </Text>
+          </CarouselCard>
+        ))
+      }
+      <div class="p-2"></div>
+    </Carousel>
+  </Sal>
+</Section>
+
+<!-- <div
+    class="py-xl flex flex-col max-md:py-l"
+    style="
+    background: linear-gradient(
+    249.28deg,
+    rgba(255, 245, 212, 1) 0%,
+    rgba(246, 255, 237, 1) 0%,
+    rgba(233, 245, 255, 1) 100%
+    );
+    "
+>
+    <div class="flex flex-row items-center justify-between px-xl max-md:flex-col max-md:gap-[16px] max-sm:px-3 ">
+      <Text type="h2" class="[&>span]:text-primary">Featured <span>Updates</span></Text>
+        {showSocial && 
+          <a  href="https://www.facebook.com/EkamAcademy.KanakapuraRoad"
+              target="_blank"
+          >
+            <div
+              class="flex flex-row gap-[13px] items-center justify-center relative font-sans font-bold text-[22px] max-md:text-base max-sm:gap-1">
+              <div
+                class="text-center"
+                style="
+                color: #216283;
+                "
+              >
+              Follow @EkamAcademy for daily updates!
+            </div>
+              <div class="w-[30px] h-[30px] text-[#0B88EF] max-sm:w-[28px] max-sm:h-[28px]">
+                <Fragment set:html={fb} />
+              </div>
+            </div>
+        </a>
+      }
+        
+    </div>
+    <div class="w-full relative">
+     
+      <div id="scroll-container" class="overflow-x-auto no-scrollbar" style={{
+              overflowX: 'scroll',
+              overflowY: 'hidden',
+        }}>
+        <div class="p-l pl-xl pb-0 pr-4 flex gap-20 max-md:px-l max-md:gap-4">
+          {
+            config.map((item, index) => (
+              <CarouselCard
+                title={item.title}
+                img={item.img} 
+                index={index}
+                />
+            ))
+          }
+          <div class="p-2"></div>
+        </div>
+      </div>
+      <div class="w-fit h-fit top-0 left-0 z-50 flex flex-row items-center  justify-between pointer-events-none gap-l mx-auto mt-l">
+        <div class="w-10 h-10 pointer-events-auto cursor-pointer" id="prev-button">
+          <div class="w-full h-full -scale-100 bg-neutral-dark-grey text-white flex items-center justify-center rounded-full">
+            <Fragment set:html={arrow} />
+          </div>
+        </div>
+        <div class="w-10 h-10 pointer-events-auto cursor-pointer" id="next-button">
+          <div class="w-full h-full scale-100 bg-neutral-dark-grey flex text-white items-center justify-center rounded-full">
+            <Fragment set:html={arrow}  />
+          </div>
+          </div>
+      </div>
+    </div> -->
+
+<script>
+  let prevButton = document.querySelector("#prev-button");
+  let nextButton = document.querySelector("#next-button");
+
+  let scrollContainer = document.querySelector("#scroll-container");
+
+  const checkOverflow = () => {
+    const prevButton = document.querySelector("#prev-button");
+    const nextButton = document.querySelector("#next-button");
+
+    const scrollContainer = document.querySelector("#scroll-container");
+    if (scrollContainer?.scrollWidth) {
+      if (scrollContainer?.scrollWidth > scrollContainer?.clientWidth) {
+        prevButton?.classList.remove("hidden");
+        nextButton?.classList.remove("hidden");
+      } else {
+        prevButton?.classList.add("hidden");
+        nextButton?.classList.add("hidden");
+      }
+    }
+  };
+  window.addEventListener("resize", checkOverflow);
+  checkOverflow();
+
+  if (prevButton && nextButton && scrollContainer) {
+    const scroll = (scrollOffset: number) => {
+      scrollContainer.scrollBy({
+        top: 0,
+        left: scrollOffset,
+        behavior: "smooth",
+      });
+    };
+
+    const scrollOffset = document.querySelector(".scroll-card")?.offsetWidth;
+
+    prevButton.addEventListener("click", () => {
+      scroll(scrollOffset * -1);
+    });
+
+    nextButton.addEventListener("click", () => {
+      scroll(scrollOffset);
+    });
+  }
+  document.addEventListener("astro:beforeload", () => {
+    prevButton = document.querySelector("#prev-button");
+    nextButton = document.querySelector("#next-button");
+    scrollContainer = document.querySelector("#scroll-container");
+    if (prevButton && nextButton && scrollContainer) {
+      const scroll = (scrollOffset: number) => {
+        scrollContainer.scrollBy({
+          top: 0,
+          left: scrollOffset,
+          behavior: "smooth",
+        });
+      };
+
+      const scrollOffset = document.querySelector(".scroll-card")?.offsetWidth;
+
+      prevButton.addEventListener("click", () => {
+        scroll(scrollOffset * -1);
+      });
+
+      nextButton.addEventListener("click", () => {
+        scroll(scrollOffset);
+      });
+    }
+    checkOverflow();
+  });
+</script>

@@ -1,0 +1,204 @@
+---
+import { Image } from "astro:assets";
+import Heading from "../system/Heading.astro";
+import Text from "../system/Text.astro";
+import config from "../../../config";
+import CampusCard from "./campusCard.astro";
+// import campusBG  from "../../images/campusBG.jpeg";
+import campusBGMb from "../../image/mb-campusbg.jpg";
+// import campusPreview1 from '../../images/campusPreview1.png'
+// import campusPreview2 from '../../images/campusPreview2.png'
+// import campuMbsPreview3 from '../../images/campusPreview3.png'
+// import campusPreview4 from '../../images/campusPreview4.png'
+
+import campusBG from "../../image/homepage/campusfacilities/campusBG.jpeg";
+import campusBG2 from "../../image/homepage/campusfacilities/campusBG2.jpeg";
+import campusBG3 from "../../image/homepage/campusfacilities/campusBG3.jpeg";
+import campusBG4 from "../../image/homepage/campusfacilities/campusBG4.jpeg";
+import campusBG5 from "../../image/homepage/campusfacilities/campusBG5.jpeg";
+import campusBG6 from "../../image/homepage/campusfacilities/campusBG6.jpeg";
+import campusBG7 from "../../image/homepage/campusfacilities/campusBG7.jpeg";
+import campusBG8 from "../../image/homepage/campusfacilities/campusBG7.jpeg";
+
+import Button from "../system/Button.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const campus = config.campus;
+---
+
+<div class="w-full h-[868px] max-md:h-[650px] relative overflow-hidden">
+  <Image
+    src={campusBG}
+    alt="campusBG"
+    class="w-full h-full absolute top-0 left-0 max-md:hidden block"
+  />
+  <Image
+    src={campusBGMb}
+    alt="campusBG"
+    class="w-full h-full absolute top-0 left-0 max-md:block hidden"
+  />
+  <div class="w-full h-full bg-[#1c1c1c]/80 absolute"></div>
+  <div class="absolute w-full h-full top-0 left-0">
+    <div
+      class="w-[207px] h-[138px] max-md:w-[103px] max-md:h-[69px] top-0 left-0 absolute z-10 hover:z-30 hover:scale-125 duration-500 transition-transform origin-top-left"
+    >
+      <Image
+        data-campus-image
+        data-sal="zoom-in"
+        data-sal-delay="100"
+        data-sal-easing="easeInOutCirc"
+        data-sal-duration="800"
+        src={campusBG}
+        alt="campusPreview1"
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <div
+      class="w-[212px] h-[190px] max-md:w-[125px] max-md:h-[90px] top-[25%] left-[5%] absolute z-10 hover:z-30 hover:scale-125 duration-500 transition-transform"
+    >
+      <Image
+        data-campus-image
+        data-sal="zoom-in"
+        data-sal-delay="100"
+        data-sal-easing="easeInOutCirc"
+        data-sal-duration="800"
+        src={campusBG2}
+        alt="campusPreview1"
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <div
+      class="w-[338px] h-[226px] max-md:w-[125px] max-md:h-[90px] bottom-[2%] -left-[4%] absolute z-10 hover:z-30 hover:scale-125 duration-500 transition-transform origin-bottom-left"
+    >
+      <Image
+        data-campus-image
+        data-sal="zoom-in"
+        data-sal-delay="100"
+        data-sal-easing="easeInOutCirc"
+        data-sal-duration="800"
+        src={campusBG3}
+        alt="campusPreview1"
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <div
+      class="w-[247px] h-[187px] max-md:w-[110px] max-md:h-[70px] bottom-[7%] max-md:bottom-[16%] max-md:left-[36%] left-[40%] absolute z-10 hover:z-30 hover:scale-125 duration-500 transition-transform"
+    >
+      <Image
+        data-campus-image
+        data-sal="zoom-in"
+        data-sal-delay="100"
+        data-sal-easing="easeInOutCirc"
+        data-sal-duration="800"
+        src={campusBG4}
+        alt="campusPreview1"
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <div
+      class="w-[247px] h-[187px] max-md:w-[125px] max-md:h-[90px] bottom-0 right-0 absolute z-10 hover:z-30 hover:scale-125 duration-500 transition-transform origin-bottom-right"
+    >
+      <Image
+        data-campus-image
+        data-sal="zoom-in"
+        data-sal-delay="100"
+        data-sal-easing="easeInOutCirc"
+        data-sal-duration="800"
+        src={campusBG6}
+        alt="campusPreview1"
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <!-- <div
+      class="w-[228px] h-[152px] -top-[5%] -right-[6%] absolute z-10 hover:z-30 hover:scale-125 duration-500 transition-transform"
+    >
+      <Image
+        data-campus-image
+        data-sal="zoom-in"
+        data-sal-delay="100"
+        data-sal-easing="easeInOutCirc"
+        data-sal-duration="800"
+        src={campusBG7}
+        alt="campusPreview1"
+        class="w-full h-full object-cover"
+      />
+    </div> -->
+    <div
+      class="w-[250px] h-[180px] max-md:w-[125px] max-md:h-[90px] top-[4%] right-[0%] absolute z-10 hover:z-30 hover:scale-125 duration-500 transition-transform origin-top-right"
+    >
+      <Image
+        data-campus-image
+        data-sal="zoom-in"
+        data-sal-delay="100"
+        data-sal-easing="easeInOutCirc"
+        data-sal-duration="800"
+        src={campusBG8}
+        alt="campusPreview1"
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <div
+      class="w-[250px] h-[180px] max-md:w-[125px] max-md:h-[90px] max-md:top-[30%] top-[40%] right-[8%] absolute z-10 hover:z-30 hover:scale-125 duration-500 transition-transform"
+    >
+      <Image
+        data-campus-image
+        data-sal="zoom-in"
+        data-sal-delay="100"
+        data-sal-easing="easeInOutCirc"
+        data-sal-duration="800"
+        src={campusBG5}
+        alt="campusPreview1"
+        class="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+  <div
+    class="w-full h-full bg-black/30 absolute pointer-events-none z-20 top-0 left-0"
+  >
+  </div>
+  <div
+    class="w-full h-full relative z-30 flex flex-col items-center pointer-events-none"
+  >
+    <div
+      class="w-[1px] h-[280px] bg-white"
+      data-sal="slide-down"
+      data-sal-delay="50"
+      data-sal-easing="easeInOutCirc"
+      data-sal-duration="800"
+    >
+    </div>
+    <div class="p-3"></div>
+    <Text
+      type="base"
+      class="text-center tracking-[4.8px] uppercase text-white pointer-events-auto"
+      data-sal="slide-up"
+      data-sal-delay="500"
+      data-sal-easing="easeInOutCirc"
+      data-sal-duration="800"
+    >
+      Discover the EKAM Experience
+    </Text>
+    <div class="p-2"></div>
+    <Text
+      type="h2"
+      class="text-center text-white pointer-events-auto"
+      data-sal="slide-up"
+      data-sal-delay="700"
+      data-sal-easing="easeInOutCirc"
+      data-sal-duration="800"
+    >
+      Our Campus & Facilities
+    </Text>
+    <div class="p-2"></div>
+    <div
+      data-sal="slide-up"
+      data-sal-delay="800"
+      data-sal-easing="easeInOutCirc"
+      data-sal-duration="800"
+    >
+      <a href="/campus">
+        <Button class="pointer-events-auto">Explore Campus</Button>
+      </a>
+    </div>
+  </div>
+</div>

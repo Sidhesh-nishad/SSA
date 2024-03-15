@@ -1,0 +1,105 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import TopNavigationBar from "../components/TopNavigationBar.astro";
+
+import Hero from "./LandingPageHero.astro";
+
+import "../global.css";
+import mandatoryPDF from "./Edify-NMPD.pdf"
+import Footer from "../components/landingPage/Footer.astro";
+import Text from "../components/system/Text.astro";
+import Section from "../components/system/Section.astro";
+import GoToCta from "../components/GoToCta.astro";
+import campus1 from "../images/campus/gas/gallery/1.jpeg";
+import config from "../../config";
+const campusConfig = config.campus.find((c) => c.internalName === "kanakapura");
+import slide1 from "../images/slides/01.webp";
+import slide3 from "../images/slides/03.webp";
+import slide4 from "../image/about-us/bg.jpeg";
+import slide5 from "../images/slides/05.webp";
+import Connect from "../components/campus/Connect.astro";
+
+import vision from "../image/about-us/vision.png";
+
+import blobBig from "../fillers/blobBig.png";
+import blobBigDark from "../fillers/blobBigDark.png";
+import { Image } from "astro:assets";
+import Carousel from "../components/system/Carousel.astro";
+import CarouselCard from "../components/system/CarouselCard.astro";
+
+import what from "../image/about-us/what.jpeg";
+import why from "../image/about-us/why.jpeg";
+import theme from "../image/about-us/theme.png";
+import assesment from "../image/about-us/assessment.jpeg";
+import profiles from "../image/about-us/profiles.png";
+
+import mission1 from "../image/about-us/mission-1.png";
+import mission2 from "../image/about-us/mission-2.png";
+import mission3 from "../image/about-us/mission-3.png";
+
+import president from "../image/about-us/president2.jpg";
+import principal from "../image/about-us/principal.png";
+
+import advisory1 from "../image/about-us/advisory/1.jpg";
+import advisory2 from "../image/about-us/advisory/2.jpg";
+import advisory3 from "../image/about-us/advisory/3.jpg";
+import advisory4 from "../image/about-us/advisory/4.jpg";
+import advisory5 from "../image/about-us/advisory/5.jpg";
+import advisory6 from "../image/about-us/advisory/6.jpg";
+import advisory7 from "../image/about-us/advisory/7.jpg";
+import advisory8 from "../image/about-us/advisory/8.jpg";
+import advisory9 from "../image/about-us/advisory/9.jpg";
+import advisory10 from "../image/about-us/advisory/10.jpg";
+import advisory11 from "../image/about-us/advisory/11.jpg";
+import advisory12 from "../image/about-us/advisory/12.jpg";
+
+const toppers = campusConfig?.toppers;
+
+---
+
+<Layout
+  title="About Us | Best International K12 Primary Schools South bengalore Electronic City"
+>
+  <div class="flex flex-col">
+    <TopNavigationBar />
+    
+    <Section  class="flex flex-col items-center" slot="title">
+          <Text type="h2" class="text-center">
+            CBSE Mandatory <span class="text-primary"> Disclosure</span>
+          </Text>  
+        <div class="p-6"> </div>
+        <iframe src={mandatoryPDF} class="w-[95%] h-[75vh]"></iframe>
+      </Section>
+      
+
+  </div>
+
+  
+  <Footer />
+</Layout>
+
+<style>
+  .float {
+    position: fixed;
+    /* background-color:#25d366; */
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    /* box-shadow: 2px 2px 3px #999; */
+    z-index: 100;
+  }
+
+  .float > div {
+    opacity: 0;
+    transition: 0.6s all ease-in-out;
+  }
+  .float a:hover ~ div {
+    opacity: 1;
+  }
+
+  .my-float {
+    margin-top: 16px;
+  }
+</style>

@@ -1,0 +1,73 @@
+---
+import kid from "../../image/academics/kid.png";
+import Button from "../system/Button.astro";
+import { Image } from "astro:assets";
+import Text from "../system/Text.astro";
+import Sal from "../system/Sal.astro";
+import Section from "../system/Section.astro";
+import Scribble from "../Scribble.astro";
+import gridBG from "../../fillers/gridBG.svg";
+
+import Affiliations from "../Affiliations.astro";
+---
+
+<Section>
+  <div
+    class="flex flex-row gap-[72px] max-md:gap-[30px] max-md:flex-col max-md:items-center relative"
+  >
+    <div class="max-md:order-2">
+      <Sal preset="slide-up" d="100" t="400">
+        <Text type="h2">
+          Aspiring <span class="relative"> for Excellence</span>
+        </Text>
+      </Sal>
+      <div class="p-2"></div>
+      <!-- <Sal preset="slide-up" d="200" t="400">
+        <Text type="lg">
+          Our Philosophy: Empowering Through <span class="text-primary">Inquiry</span>
+        </Text>
+      </Sal> -->
+      <div class="p-3 max-md:p-2"></div>
+      <Sal preset="slide-up" d="300" t="400">
+        <Text type="base">
+          Ekam's educational philosophy, shaped by MDN Edify Education, centers
+          on Inquiry-Based Learning, nurturing progressive thinking and
+          curiosity. Our 3C policy emphasizes character, competence, and
+          content, offering interactive and integrated learning experiences. Our
+          pedagogical approach prioritizes student-centered learning,
+          incorporating diverse teaching strategies like QAXP and RAFT.
+          <!-- We have built a dynamic learning space that thrives on curiosity and
+          adventure! Guided by <br />
+          <span class="text-primary">MDN Edify Education</span>
+           , our approach cultivates imaginative thinkers poised to make a
+          positive impact on the world. We are inspired by global educators and
+          diverse methods, ensuring your child's education is as thrilling as it
+          is enriching! -->
+        </Text>
+      </Sal>
+      <div class="p-3"></div>
+      <!-- <Sal preset="slide-up" d="400" t="400">
+        <div class="flex flex-row gap-6 items-center">
+          <Button type="primary" className="justify-start">
+            Read more about us
+          </Button>
+        </div>
+      </Sal> -->
+    </div>
+    <Sal preset="fade" d="400" t="400" class="flex-shrink-0">
+      <Image
+        class="w-[324px] max-md:w-[210px]"
+        src={kid}
+        alt="Why choose Ekam??"
+      />
+    </Sal>
+    <div
+      class="w-[1016px] h-[650px] max-[1030px]:w-full absolute -left-[50px] top-[280px] -z-[1] opacity-60"
+    >
+      <img src={gridBG.src} class="w-full h-full" />
+    </div>
+  </div>
+
+  <div class="pt-6"></div>
+  <Affiliations />
+</Section>

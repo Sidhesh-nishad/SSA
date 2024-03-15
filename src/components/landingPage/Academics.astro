@@ -1,0 +1,99 @@
+---
+import Section from "../system/Section.astro";
+import Text from "../system/Text.astro";
+import Button from "../system/Button.astro";
+import { Image } from "astro:assets";
+import academics1 from "../../image/homepage/1.jpeg";
+import academics2 from "../../image/homepage/2.jpeg";
+import Sal from "../system/Sal.astro";
+import Scribble from "../Scribble.astro";
+---
+
+<Section class="pb-[0px]">
+  <div class="w-full text-center">
+    <Sal preset="slide-up" d="300" t="400">
+      <Text type="h2">
+        Our <span class="relative">
+          Academics
+          <Scribble class="left-2" />
+        </span>
+      </Text>
+    </Sal>
+    <div class="p-2"></div>
+    <Sal preset="slide-up" d="400" t="400">
+      <Text type="lg" class="font-bold">
+        Nurturing Inquisitive Minds at <span class="text-black">Ekam</span>
+      </Text>
+    </Sal>
+  </div>
+  <div class="p-[30px] max-md:p-[10px]"></div>
+  <div class="flex flex-row max-md:flex-col gap-12 max-md:gap-6">
+    <Sal preset="fade" d="500" t="500" class="flex-1">
+      <Image
+        src={academics2}
+        alt=""
+        class="flex-1 h-[350px] object-cover object-[20%_20%] border-[10px] border-[#FFC784]/60"
+      />
+    </Sal>
+    <div class="flex-1">
+      <Sal preset="slide-up" d="400" t="600">
+        <Text type="lg" class="font-bold leading-[140%]">
+          Curriculum Fueled by Inquiry, <span class="text-primary"
+            >Enriched by Exploration</span
+          >
+        </Text>
+      </Sal>
+      <div class="p-3 max-md:p-2"></div>
+      <Sal preset="slide-up" d="300" t="400">
+        <Text type="base">
+          A child's journey begins with the dynamic Early Years Program (ESP),
+          laying a strong foundation in the Primary School Program (PSP).
+          Progressing through the nurturing Middle School Program (MSP) and
+          culminating in the Secondary School Program (SSP) for higher education
+          readiness. Customised for your child's age and goals, ensuring an
+          engaging, impactful education!
+        </Text>
+      </Sal>
+      <div class="max-md:p-2 p-4"></div>
+      <Sal preset="slide-up" d="400" t="600">
+        <a href="/academics">
+          <Button>Explore Academic Offerings</Button>
+        </a>
+      </Sal>
+    </div>
+  </div>
+  <div class="p-[50px] max-md:p-[10px]"></div>
+  <div class="flex flex-row max-md:flex-col gap-20 max-md:gap-8">
+    <div class="flex-1 max-md:order-1">
+      <Sal preset="slide-up" d="400" t="600">
+        <Text type="lg" class="font-bold leading-[140%]">
+          Discover our <span class="text-primary">Unique Program Offerings</span
+          >
+           to students
+        </Text>
+      </Sal>
+      <div class="p-3 max-md:p-1"></div>
+      <Sal preset="slide-up" d="400" t="600">
+        <Text type="base">
+          Beyond the classrooms, we ignite passion with our Sports Education
+          Program, vibrant Arts curriculum, and practical Life Skills training.
+          Through interactive workshops, we elevate the learning adventure,
+          ensuring our students excel in both academics and personal growth!
+        </Text>
+      </Sal>
+      <div class="max-md:p-2 p-4"></div>
+      <Sal preset="slide-up" d="400" t="600">
+        <a href="/academics#studentenrichment">
+          <Button>Explore Student Programs</Button>
+        </a>
+      </Sal>
+    </div>
+    <Sal preset="fade" d="400" t="700" class="flex-1">
+      <Image
+        src={academics1}
+        alt=""
+        class="flex-1 h-[350px] object-cover object-center border-[10px] border-[#FFC784]/60"
+      />
+    </Sal>
+  </div>
+</Section>

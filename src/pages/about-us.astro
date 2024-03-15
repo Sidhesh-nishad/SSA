@@ -1,0 +1,612 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import TopNavigationBar from "../components/TopNavigationBar.astro";
+
+import Hero from "./LandingPageHero.astro";
+
+import "../global.css";
+
+import Footer from "../components/landingPage/Footer.astro";
+import Text from "../components/system/Text.astro";
+import Section from "../components/system/Section.astro";
+import GoToCta from "../components/GoToCta.astro";
+import campus1 from "../images/campus/gas/gallery/1.jpeg";
+import config from "../../config";
+const campusConfig = config.campus.find((c) => c.internalName === "kanakapura");
+import slide1 from "../images/slides/01.webp";
+import slide3 from "../images/slides/03.webp";
+import aboutUsBG from "../image/about-us/bg.webp";
+import aboutUsBGMb from "../image/about-us/bgMb.webp";
+import slide5 from "../images/slides/05.webp";
+import Connect from "../components/campus/Connect.astro";
+
+import vision from "../image/about-us/vision.png";
+
+import blobBig from "../fillers/blobBig.png";
+import blobBigDark from "../fillers/blobBigDark.png";
+import { Image } from "astro:assets";
+import Carousel from "../components/system/Carousel.astro";
+import CarouselCard from "../components/system/CarouselCard.astro";
+
+import what from "../image/about-us/what.jpeg";
+import why from "../image/about-us/why.jpeg";
+import theme from "../image/about-us/theme.png";
+import assesment from "../image/about-us/assessment.jpeg";
+import profiles from "../image/about-us/profiles.png";
+
+import mission1 from "../image/about-us/mission-1.png";
+import mission2 from "../image/about-us/mission-2.png";
+import mission3 from "../image/about-us/mission-3.png";
+
+import president from "../image/about-us/president2.jpg";
+import principal from "../image/about-us/principal.png";
+
+import AdvisoryBoard from "../components/AdvisoryBoard.astro";
+
+import qualityPolicy from "../image/about-us/qualityPolicy.png";
+
+const toppers = campusConfig?.toppers;
+
+---
+
+<Layout
+  title="About Us | Best International K12 Primary Schools South bengalore Electronic City"
+>
+  <div class="flex flex-col">
+    <TopNavigationBar />
+    <div
+      class="h-[76svh] flex"
+      style="background: linear-gradient(360deg, #1B2226 0%, #052B4C 52.08%, #1370A7 100%);"
+    >
+      <Hero
+        showSlide={true}
+        slideImages={[
+          {
+            slide: [
+              { src: aboutUsBG.src, media: "(min-width: 768px)", position: "top" },
+              { src: aboutUsBGMb.src, media: "(max-width: 768px)", position: "top" },
+            ],
+            picture: true,
+            type: "image",
+            position: "top",
+          },
+        ]}
+        contentDirection="items-end"
+        className="overflow-hidden font-roundo pb-0"
+      >
+      <div slot="title">
+          <!-- <div class="p-20"></div> -->
+          <Text type="h2">
+            Welcome to <span class="text-primary">Ekam</span>
+          </Text>
+          <div class="p-1"></div>
+          <Text type="base" class="text-white w-[80%] max-md:w-full">
+            We're deeply committed to holistic child development. Situated on an 8-acre campus, we feature advanced digital classrooms, specialized labs, and multifaceted facilities for arts and sports.
+          </Text>
+          <div class="p-2"></div>
+        </div>
+      </Hero>
+    </div>
+  </div>
+
+  <Section
+    class="flex flex-col w-full items-center text-left px-[56px] pt-[0] text-black"
+    style={{
+      background:
+        "linear-gradient(180deg, rgba(255, 227, 193, 0.35) 0%, rgba(244, 179, 62, 0.10) 100%)",
+    }}
+  >
+    <div
+      class="w-full flex max-md:items-center max-md:gap-[30px] flex-row max-md:flex-col py-[82px] max-md:py-6 gap-[125px] justify-between text-left max-md:text-center"
+    >
+      <div class="max-md:flex block flex-col items-center">
+        <Text type="h2">Our <span>Mission</span> & <span>Vision</span></Text>
+
+        <div class="pt-4 max-md:pt-2"></div>
+        <Text type="lg" class="[&>span]:text-primary text-[24px]">
+          Empower young minds for global citizenship through <span>progressive education</span>
+        </Text>
+        <div class="pt-6 max-md:pt-2"></div>
+        <Text type="base" class="max-w-[900px]">
+          At Ekam School, a strong belief in innovative pedagogy fuels our
+          passion to cultivate habits of the mind in our students. As a highly
+          collaborative learning community, we are driven by the power of
+          inquiry, curiosity and progressive learning. We are defined by our
+          commitment to developing a global outlook in our students, and
+          encouraging them to be confident, internationally-minded thinkers who
+          are at home anywhere in the world.
+        </Text>
+        <div class="pt-12 max-md:pt-6"></div>
+        <Image
+          src={blobBig}
+          class="w-[268px] max-md:w-[50%]"
+          alt="Decorative Element"
+        />
+      </div>
+      <Image
+        class="w-[324px] max-md:w-[90%] flex-shrink-0"
+        src={vision}
+        alt="Quality Policy Thumbnail"
+      />
+    </div>
+    <div class="pt-[54px] max-md:pt-[20px]"></div>
+    <div class="w-full flex flex-col items-center text-left max-md:text-center">
+      <Text type="h2">Our <span>Philosophy</span></Text>
+      <div class="pt-4 max-md:pt-2"></div>
+      <Text type="lg" class="[&>span]:text-primary text-[28px]">
+        Empathy, Excellence, Empowerment: <span>The Ekam Journey</span>
+        <!-- To create an environment <span>conducive to success.</span> -->
+      </Text>
+      <div class="pt-9 max-md:pt-5"></div>
+      <div
+        class="w-full flex flex-row justify-between max-md:flex-col max-md:gap-4"
+      >
+        <div
+          class="p-5 rounded-md border border-black/20 w-[390px] max-md:w-full"
+        >
+          <div class="bg-red-200 rounded-md h-[271px] overflow-hidden">
+            <Image src={mission1} alt="" class="object-cover w-full h-full" />
+          </div>
+          <div class="pt-6"></div>
+          <Text type="regular" class="[&>span]:font-bold text-start">
+            <span>Environment for Success:</span> Ekam promotes a student-centric, empathetic atmosphere with emphasis on respect for community values and cooperation.
+          </Text>
+        </div>
+        <div
+          class="p-5 rounded-md border border-black/20 w-[390px] max-md:w-full"
+        >
+          <div class="bg-red-200 rounded-md h-[271px] overflow-hidden">
+            <Image src={mission2} alt="" class="object-cover w-full h-full" />
+          </div>
+          <div class="pt-6"></div>
+          <Text type="regular" class="[&>span]:font-bold text-start">
+            <span>Fostering Lifelong Learning:</span> We implement an integrated, inquiry-based curriculum, encouraging diverse intellectual, artistic, and athletic pursuits.
+          </Text>
+        </div>
+        <div
+          class="p-5 rounded-md border border-black/20 w-[390px] max-md:w-full"
+        >
+          <div class="bg-red-200 rounded-md h-[271px] overflow-hidden">
+            <Image src={mission3} alt="" class="object-cover w-full h-full" />
+          </div>
+          <div class="pt-6"></div>
+          <Text type="regular" class="[&>span]:font-bold text-start">
+            <span>Shaping Global Leaders:</span> Ekam is committed to nurturing resilient and adaptable students prepared for further education and social responsibility.
+          </Text>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <Section class="flex flex-col w-full items-center text-left">
+    <Image
+      src={blobBig}
+      class="w-[268px] max-md:w-[140px]"
+      alt="Decorative Element"
+    />
+    <div class="pt-8"></div>
+    <Text type="lg" class="text-center">
+      Empowering Through <span class="text-primary"
+        >Inquiry</span
+      >
+    </Text>
+    <div class="pt-4 max-md:pt-2"></div>
+    <Text type="h2">Inquiry-based Learning</Text>
+    <div class="pt-8 max-md:pt-2"></div>
+    <Text
+      type="base"
+      class="w-[51%] max-md:w-full text-center [&>span]:text-primary"
+    >
+      Inquiry is the driving factor and leading pedagogical approach that makes
+      Ekam classrooms so <span>distinctive and unique.</span>
+    </Text>
+
+    <div class="pt-16 max-md:pt-6"></div>
+
+    <div class="w-full flex flex-col gap-3 text-white">
+      <div class="flex flex-row gap-3 h-[515px] max-md:h-auto max-md:flex-col">
+        <div class="h-full flex-1 bg-[#FFE3C1] rounded-[7px] p-[7px] relative">
+          <div class="w-full h-full absolute top-0 left-0 p-[7px]">
+            <div
+              class="w-full h-full"
+              style={{
+                background: `url(${why.src})`,
+                backgroundSize: "cover",
+                backgroundPosition: "top",
+              }}
+            >
+            </div>
+          </div>
+          <div
+            class="max-md:min-h-[420px] w-full h-full rounded-[7px] flex flex-col justify-end max-md:px-[0px] max-md:pt-8 z-[1] relative"
+          >
+            <div
+              class="px-[37px] py-6"
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(26, 24, 23, 0.80) 0%, rgba(45, 15, 0, 0.80) 100%)",
+                backdropFilter: "blur(5px)",
+              }}
+            >
+              <Text type="h2" class="text-[#FFE3C1]">Why?</Text>
+              <div class="p-1"></div>
+              <Text type="base" class="text-white">
+                At EKAM, we ignite curiosity by delving into <span
+                  class="font-bold text-primary">Why questions</span
+                >
+                 , resulting in a deeper grasp of concepts, whether inside or
+                outside the classroom.
+              </Text>
+            </div>
+          </div>
+        </div>
+
+        <div class="h-full flex-1 bg-[#FFE3C1] rounded-[7px] p-[7px] relative">
+          <div class="w-full h-full absolute top-0 left-0 p-[7px]">
+            <div
+              class="w-full h-full"
+              style={{
+                background: `url(${what.src})`,
+                backgroundSize: "cover",
+                backgroundPosition: "top",
+              }}
+            >
+            </div>
+          </div>
+          <div
+            class="max-md:min-h-[420px] w-full h-full rounded-[7px] flex flex-col justify-end max-md:px-[0px] max-md:pt-8 z-[1] relative"
+          >
+            <div
+              class="px-[37px] py-6"
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(26, 24, 23, 0.80) 0%, rgba(45, 15, 0, 0.80) 100%)",
+                backdropFilter: "blur(5px)",
+              }}
+            >
+              <Text type="h2" class="text-[#FFE3C1]">What?</Text>
+              <div class="p-1"></div>
+              <Text type="base" class="text-white">
+                Engaging in inquiry-based learning means exploring <span
+                  class="font-bold text-primary">What questions</span
+                >, resulting in a more profound understanding through thoughtful
+                exploration.
+              </Text>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-row gap-3 h-[515px] max-md:h-auto">
+        <div class="h-full flex-1 bg-[#FFE3C1] rounded-[7px] p-[7px] relative">
+          <div class="w-full h-full absolute top-0 left-0 p-[7px]">
+            <div
+              class="w-full h-full"
+              style={{
+                background: `url(${theme.src})`,
+                backgroundSize: "cover",
+                backgroundPosition: "top",
+              }}
+            >
+            </div>
+          </div>
+          <div
+            class="max-md:min-h-[420px] w-full h-full rounded-[7px] flex flex-col justify-end max-md:px-[0px] max-md:pt-8 z-[1] relative"
+          >
+            <div
+              class="px-[37px] py-6"
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(26, 24, 23, 0.80) 0%, rgba(45, 15, 0, 0.80) 100%)",
+                backdropFilter: "blur(5px)",
+              }}
+            >
+              <Text type="h2" class="text-[#FFE3C1]">Themes</Text>
+              <div class="p-1"></div>
+              <Text type="base" class="text-white">
+                We incorporate six Trans-disciplinary Themes: Who We Are, Where
+                We Are in Place & Time, How We <span
+                  class="font-bold text-primary">Express</span
+                > Ourselves, How the World Works, How We <span
+                  class="font-bold text-primary">Organise</span
+                > Ourselves & <span class="font-bold text-primary">Sharing</span
+                > the Planet. These themes promote engaging, memorable learning
+                experiences rooted in everyday life.
+              </Text>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-row max-md:flex-col gap-3 h-[515px] max-md:h-auto">
+        <div class="h-full flex-1 bg-[#FFE3C1] rounded-[7px] p-[7px] relative">
+          <div class="w-full h-full absolute top-0 left-0 p-[7px]">
+            <div
+              class="w-full h-full"
+              style={{
+                background: `url(${profiles.src})`,
+                backgroundSize: "cover",
+                backgroundPosition: "top",
+              }}
+            >
+            </div>
+          </div>
+          <div
+            class="max-md:min-h-[420px] w-full h-full rounded-[7px] flex flex-col justify-end max-md:px-[0px] max-md:pt-8 z-[1] relative"
+          >
+            <div
+              class="px-[37px] py-6"
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(26, 24, 23, 0.80) 0%, rgba(45, 15, 0, 0.80) 100%)",
+                backdropFilter: "blur(5px)",
+              }}
+            >
+              <Text type="h2" class="text-[#FFE3C1]">Profiles (3C)</Text>
+              <div class="p-1"></div>
+              <Text type="base" class="text-white">
+                We believe in - instilling <span class="font-bold text-primary"
+                  >Character</span
+                > through values and attitudes; <span
+                  class="font-bold text-primary">Competence</span
+                > in essential skills and knowledge for success; <span
+                  class="font-bold text-primary">Content</span
+                > that is relevant and meaningful for today’s day and age.
+              </Text>
+            </div>
+          </div>
+        </div>
+        <div class="h-full flex-1 bg-[#FFE3C1] rounded-[7px] p-[7px] relative">
+          <div class="w-full h-full absolute top-0 left-0 p-[7px]">
+            <div
+              class="w-full h-full"
+              style={{
+                background: `url(${assesment.src})`,
+                backgroundSize: "cover",
+                backgroundPosition: "top",
+              }}
+            >
+            </div>
+          </div>
+          <div
+            class="max-md:min-h-[420px] w-full h-full rounded-[7px] flex flex-col justify-end max-md:px-[0px] max-md:pt-8 z-[1] relative"
+          >
+            <div
+              class="px-[37px] py-6"
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(26, 24, 23, 0.80) 0%, rgba(45, 15, 0, 0.80) 100%)",
+                backdropFilter: "blur(5px)",
+              }}
+            >
+              <Text type="h2" class="text-[#FFE3C1]">Assessment</Text>
+              <div class="p-1"></div>
+              <Text type="base" class="text-white">
+                Assessment helps analyse learning, plan for the future, and
+                track <span class="font-bold text-primary">progress</span>,
+                ensuring effective teaching and student growth.
+              </Text>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    class="flex flex-col w-full items-center text-left px-[56px] pt-[0] pb-[0] text-black"
+    style={{
+      background:
+        "linear-gradient(180deg, rgba(255, 227, 193, 0.35) 0%, rgba(244, 179, 62, 0.10) 100%)",
+    }}
+  >
+    <div
+      class="w-full flex max-md:items-center max-md:gap-[30px] flex-row max-md:flex-col py-[82px] pt-[60px] max-md:py-6 gap-[125px] justify-between text-left max-md:text-center"
+    >
+      <div class="max-md:flex block flex-col items-center">
+        <Text type="h2">Our Quality Policy</Text>
+
+        <div class="pt-4 max-md:pt-2"></div>
+        <Text type="lg" class="[&>span]:text-primary text-[24px]">
+          <span>Commitment to Excellence:</span> Shaping Global Citizens Through Holistic Education
+        </Text>
+        <div class="pt-6 max-md:pt-2"></div>
+
+        <Text type="regular">
+          The school emphasises academic distinction while cherishing a community that values compassion and diversity. Our approach is designed to nurture well-rounded individuals who are globally aware and locally rooted.
+        </Text>
+        <div class="pt-4" />
+        <div class="flex w-full flex-col gap-4">
+          <div class="flex flex-row items-start">
+            <div class="w-[14px] h-[17px] flex-shrink-0 top-[6px] relative">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 17" fill="none">
+                <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="#1B2226"/>
+              </svg>
+            </div>
+            <div class="px-2"></div>
+            <Text type="regular" class="[&>span]:font-bold text-start">
+              <span>Inclusive Ethos:</span> Practicing tolerance, peaceful coexistence, and ethical leadership.
+            </Text>
+          </div>
+          <div class="flex flex-row items-start">
+            <div class="w-[14px] h-[17px] flex-shrink-0 top-[6px] relative">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 17" fill="none">
+                <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="#1B2226"/>
+              </svg>
+            </div>
+            <div class="px-2"></div>
+            <Text type="regular" class="[&>span]:font-bold text-start">
+              <span>Comprehensive Awareness:</span> Merging historic insights with contemporary global understanding.
+            </Text>
+          </div>
+          <div class="flex flex-row items-start">
+            <div class="w-[14px] h-[17px] flex-shrink-0 top-[6px] relative">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 17" fill="none">
+                <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="#1B2226"/>
+              </svg>
+            </div>
+            <div class="px-2"></div>
+            <Text type="regular" class="[&>span]:font-bold">
+              <span>Diverse Engagement:</span> Enhancing international perspectives through exchanges and our unique school community.
+            </Text>
+          </div>
+          <div class="flex flex-row items-start">
+            <div class="w-[14px] h-[17px] flex-shrink-0 top-[6px] relative">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 17" fill="none">
+                <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="#1B2226"/>
+              </svg>
+            </div>
+            <div class="px-2"></div>
+            <Text type="regular" class="[&>span]:font-bold">
+              <span>Continuous Advancement:</span> Prioritising quality in teaching, resources, multilingualism, and curriculum development.
+            </Text>
+          </div>
+        </div>
+
+      </div>
+      <Image
+        class="w-[344px] object-contain max-md:w-[90%]"
+        src={qualityPolicy}
+        alt="Why choose Ekam??"
+      />
+    </div>
+    <!-- <div class="pt-[54px] max-md:pt-[20px]"></div> -->
+  </Section>
+
+  <Section class="flex flex-col w-full items-center text-left !px-0">
+    <Image
+      src={blobBig}
+      class="w-[268px] max-md:w-[140px]"
+      alt="Decorative Element"
+    />
+    <div class="pt-8"></div>
+    <Text type="h2">Our <span>Management</span></Text>
+    <!-- <div class="pt-8"></div> -->
+
+    <div class="pt-16 max-md:pt-8"></div>
+
+    <div
+      class="w-full flex gap-[73px] max-md:gap-[24px] items-center max-md:flex-col pl-[90px] max-md:px-[20px] flex-row-reverse"
+    >
+      <div
+        class="w-[460px] max-md:h-[280px] max-md:w-[280px] max-md:rounded-none overflow-hidden h-[451px] flex-shrink-0 bg-red-100 rounded-tl-[150px] rounded-bl-[16px]"
+      >
+        <Image
+          src={president}
+          class="w-full h-full object-cover object-top"
+          alt="President"
+        />
+      </div>
+      <div class="max-md:text-center text-left">
+        <div>
+          <div class="pt-1"></div>
+          <Text type="h2">Message from our Director</Text>
+          <div class="pt-2"></div>
+          <Text type="lg" class="text-primary">Mr. Ashok KM Gowda</Text>
+          <div class="p-1" />
+          <Text type="sm" class="text-black">Chairman KMET, EKAM International School, Electronic City</Text>
+          <div class="pt-8"></div>
+
+          <Text type="base" class="[&>span]:text-primary">
+            At EKAM International School Ecity, every day is a chance to profoundly impact our students, guiding their self-discovery and potential realization. Our mission centers on igniting each child's inherent learning prowess. We emphasize fostering a genuine love for learning, encapsulated in our mantra: <span>teach them how to learn, not what to learn</span>.
+            <br/><br/>
+            Annually, our dedication to shaping global citizens sees our students mature into self-driven leaders who appreciate cultural diversity. EKAM's primary goal remains providing holistic education, ensuring our students become critical thinkers and globally-aware community members.
+            <br/><br/>
+
+            Our cohesive strategic efforts, combined with our dedicated staff and supportive community, consistently drive us towards excellence. We're focused on imparting essential lifelong skills and values, cultivating responsible global citizenship in our students. We're hopeful and excited about EKAM's bright future.
+          </Text>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-[118px] max-md:pt-[30px]"></div>
+
+    <div
+      class="w-full flex flex-row gap-[73px] max-md:gap-[24px] items-center max-md:flex-col max-md:px-[20px] pr-[90px]"
+    >
+      <div
+        class="w-[460px]  max-md:h-[280px] max-md:w-[280px] max-md:rounded-none overflow-hidden max-md:rounded-tr-[0px] max-md:rounded-br-[0px] h-[451px] flex-shrink-0 bg-red-100 rounded-tr-[150px] rounded-br-[16px]"
+      >
+        <Image
+          src={principal}
+          class="w-full h-full object-cover"
+          alt="President"
+        />
+      </div>
+      <div class="max-md:text-center text-left">
+        <div>
+          <div class="pt-1"></div>
+          <Text type="h2">Message from our Principal</Text>
+          <div class="pt-2"></div>
+          <Text type="lg" class="text-primary">Dr. Manmitta Das Raina</Text>
+          <div class="pt-8"></div>
+
+          <Text type="base" class="[&>span]:text-primary">
+            Greetings!<br/>
+            We are passionate about creating a dynamic learning institution that strives for excellence to meet current and future needs.
+            <br />
+            <br />
+
+            At EKAM International, we uncover the hidden potential, diligently mentoring to transform uncut diamonds into EKAM gems. EKAM is an academically focused, globally minded institution. We inspire every student to reach their full potential, blending universal and Indian values. Every child entrusted to us is treasured and nurtured.
+            <br />
+            <br />
+            We aim to create a trajectory beyond the classroom, offering students diverse opportunities through a balanced curriculum. We ensure a safe, happy and intellectually stimulating environment with an enquiry-based curriculum that empowers them to be innovative thinkers and lifelong learners. Our journey is geared towards providing an exceptional learning experience, aiming for unmatched heights.
+            
+          </Text>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  
+
+  <AdvisoryBoard />
+
+  <div id="contact-us" style="scroll-margin: 60px;">
+    <Connect
+      details={{
+        phoneNo: {
+          label: "Call us On",
+          value: "+91 80 26667333, +91 80 26667444",
+          type: "contact",
+        },
+        workingHours: {
+          label: "Mail us at",
+          value: "info@insightacademy.in",
+          type: "mail",
+        },
+        address: {
+          label: "We are here",
+          value:
+            "#20, Vasanthpura Main Road, Off Kanakapura Road, Bangalore – 560 062",
+          type: "address",
+        },
+      }}
+      mapEmbedLink="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248939.1866465653!2d77.41886883961928!3d12.864269098588453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae159019e03bd5%3A0x701981105f182a0b!2sEdify%20School%20Kanakapura%20Main%20Road!5e0!3m2!1sen!2sin!4v1695475136575!5m2!1sen!2sin"
+    />
+  </div>
+  <GoToCta />
+  <Footer />
+</Layout>
+
+<style>
+  .float {
+    position: fixed;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    z-index: 100;
+  }
+
+  .float > div {
+    opacity: 0;
+    transition: 0.6s all ease-in-out;
+  }
+  .float a:hover ~ div {
+    opacity: 1;
+  }
+
+  .my-float {
+    margin-top: 16px;
+  }
+</style>

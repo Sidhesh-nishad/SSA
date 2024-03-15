@@ -1,0 +1,335 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import TopNavigationBar from "../components/TopNavigationBar.astro";
+
+import titleBG from "../images/titleBG.png";
+import "../global.css";
+import Footer from "../components/landingPage/Footer.astro";
+import Text from "../components/system/Text.astro";
+import Section from "../components/system/Section.astro";
+import GoToCta from "../components/GoToCta.astro";
+import Pedagogy from "../components/academics/pedagogy.astro";
+
+import StudentEnrichment from "../components/academics/StudentEnrichment.astro";
+
+import academic1 from "../image/academics/elementary.jpeg";
+import academic2 from "../image/academics/primary.jpeg";
+import academic3 from "../image/academics/middle.jpeg";
+import academic4 from "../image/academics/senior.png";
+
+import circleScribble from "../fillers/circleScribble.png";
+
+import config from "../../config";
+import TopperCard from "../components/TopperCard.astro";
+import Card from "../components/academics/Card.astro";
+
+import gridBG from "../fillers/gridBG.svg";
+import { Image } from "astro:assets";
+import Achievements from "../components/Achievements.astro";
+
+const campusConfig = config.campus.find((c) => c.internalName === "kanakapura");
+
+const toppers = campusConfig?.toppers;
+---
+
+<Layout title="Academics | Best International K12 Primary Schools South bengalore Electronic City">
+  <div class="flex flex-col">
+    <TopNavigationBar />
+  </div>
+
+  <div
+    class="w-full h-[284px] max-md:h-[190px] flex flex-col items-center justify-center"
+    style={{
+      background: `url(${titleBG.src})`,
+    }}
+  >
+    <Text type="h2">
+      <span class="relative !text-black !not-italic">
+        Our
+        <div class="w-[100px] absolute -top-4 -left-10 -z-[1]">
+          <Image
+            src={circleScribble}
+            alt="circle scribble"
+            class="w-full h-full"
+          />
+        </div>
+      </span> Academic <span>Programs</span>
+    </Text>
+    <div class="p-2"></div>
+    <Text type="lg" class="text-center">
+      Curriculum Fueled by Inquiry,<br class="max-md:block hidden" /> Enriched
+      by Exploration
+    </Text>
+  </div>
+
+  <Pedagogy />
+
+  <Section class="pt-0 relative overflow-hidden max-md:!px-0">
+    <div class="relative z-10 flex flex-col items-center">
+      <div class="max-md:px-[20px] w-full flex flex-col items-center">
+        <Text type="h2" class="mt-3">
+          Academic{" "}<span class="text-accent2">Overview</span>
+        </Text>
+        <div class="pt-8"></div>
+        <Text type="base" class="w-full max-w-[900px] text-center">
+          Embracing the NEP 2020 framework, our school offers a comprehensive
+          academic journey spanning Early Years to Secondary, with specialized
+          training for competitive exams.
+        </Text>
+        <div class="pt-4"></div>
+      </div>
+      <div
+        class="w-[1100px] max-md:w-full max-md:h-[450px] h-[537px] flex flex-col mt-8"
+      >
+        <div class="flex flex-row flex-1 border-b border-black/20">
+          <div
+            class="flex-1 flex px-1 flex-col items-center justify-center border-r border-black/20"
+          >
+            <Text
+              type="h2"
+              class="max-md:!text-[17px] max-md:text-center text-[32px] text-black"
+            >
+              Early Years
+            </Text>
+            <Text
+              type="sm"
+              class="max-md:mt-1 mt-3 max-md:!text-[13px] font-semibold text-center text-[19px]"
+            >
+              Play Group -<br class="max-md:block hidden" /> Grade II
+            </Text>
+          </div>
+          <div
+            class="flex-1 flex px-1 items-center justify-center flex-col border-r border-black/20"
+          >
+            <Text
+              type="h2"
+              class="max-md:!text-[17px] max-md:text-center text-[32px] text-black flex items-start"
+            >
+              CBSE
+            </Text>
+            <Text
+              type="sm"
+              class="max-md:mt-1 mt-3 max-md:!text-[13px] font-semibold text-center text-[19px]"
+            >
+              K.G - Grade XII
+            </Text>
+          </div>
+          <div class="flex-1 flex px-1 items-center justify-center flex-col">
+            <Text
+              type="h2"
+              class="max-md:!text-[17px] max-md:text-center text-[32px] text-black"
+            >
+              Primary Years
+            </Text>
+            <Text
+              type="sm"
+              class="max-md:mt-1 mt-3 max-md:!text-[13px] font-semibold text-center text-[19px]"
+            >
+              Grade III - V
+            </Text>
+          </div>
+        </div>
+        <div class="flex flex-row flex-1 border-b border-black/20">
+          <div
+            class="flex-1 flex px-1 items-center justify-center flex-col border-r border-black/20"
+          >
+            <Text
+              type="h2"
+              class="max-md:!text-[17px] max-md:text-center text-[32px] text-[#6F322E]"
+            >
+              IIT-JEE Training
+            </Text>
+            <Text
+              type="sm"
+              class="max-md:mt-1 mt-3 max-md:!text-[13px] font-semibold text-center text-[19px]"
+            >
+              Grade VI - XII
+            </Text>
+          </div>
+          <div
+            class="flex-1 flex px-1 items-center justify-center flex-col border-r border-black/20"
+          >
+            <Text
+              type="h2"
+              class="max-md:!text-[17px] max-md:text-center text-[32px] text-primary"
+            >
+              NEP Policy <br class="hidden max-md:block" /> 2020
+            </Text>
+            <!-- <Text type='base' class='mt-1 font-semibold text-center'>
+            </Text> -->
+          </div>
+
+          <div class="flex-1 flex px-1 items-center justify-center flex-col">
+            <Text
+              type="h2"
+              class="max-md:!text-[17px] max-md:text-center text-[32px] text-[#6F322E]"
+            >
+              NEET Training
+            </Text>
+            <Text
+              type="sm"
+              class="max-md:mt-1 mt-3 max-md:!text-[13px] font-semibold text-center text-[19px]"
+            >
+              Grade VI - XII
+            </Text>
+          </div>
+        </div>
+
+        <div class="flex flex-row flex-1">
+          <div
+            class="flex-1 flex px-1 items-center justify-center flex-col border-r border-black/20"
+          >
+            <Text
+              type="h2"
+              class="max-md:!text-[17px] max-md:text-center text-[32px] text-black"
+            >
+              Middle Years
+            </Text>
+            <Text
+              type="sm"
+              class="max-md:mt-1 mt-3 max-md:!text-[13px] font-semibold text-center text-[19px]"
+            >
+              Grade VI - VIII
+            </Text>
+          </div>
+          <div
+            class="flex-1 flex px-1 items-center justify-center flex-col border-r border-black/20"
+          >
+            <Text
+              type="h2"
+              class="max-md:!text-[17px] max-md:text-center text-[32px] text-black"
+            >
+              Cambridge (CIE)
+            </Text>
+            <Text
+              type="sm"
+              class="max-md:mt-1 mt-3 max-md:!text-[13px] font-semibold text-center text-[19px]"
+            >
+              UKG - IGCSE
+            </Text>
+          </div>
+
+          <div class="flex-1 flex px-1 items-center justify-center flex-col">
+            <Text
+              type="h2"
+              class="max-md:!text-[17px] max-md:text-center text-[32px] text-black flex flex-row items-start"
+            >
+              Secondary Years
+            </Text>
+            <Text
+              type="sm"
+              class="max-md:mt-1 mt-3 max-md:!text-[13px] font-semibold text-center text-[19px]"
+            >
+              Grade IX - XII
+            </Text>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="w-[1016px] h-[650px] max-[1030px]:w-full absolute -right-[400px] top-[440px] -z-[1] opacity-60"
+    >
+      <img src={gridBG.src} class="w-full h-full" />
+    </div>
+  </Section>
+
+  <div
+    class="w-full bg-[#FFE3C1] border"
+    style={{
+      borderColor: "rgba(255, 111, 36, 0.48)",
+    }}
+  >
+    <Section class="flex flex-col items-center !px-[50px] max-md:!px-[20px]">
+      <Card
+        image={academic1}
+        title={["Elementary", "(IK1-IK3)"]}
+        layout="left"
+        bodyContent="Ekam International Kindergarten Program encourages creativity and teamwork through innovative programs. We empower children to communicate effectively, and try new things."
+        bulletPoints={[
+          "Wonder Room: Kids engage in hands-on activities, role-playing and math challenges guided by interactive learning.",
+          "Storytelling: Exciting sessions featuring picture-books, props and lively puppets to inspire creativity in kids.",
+          "Jungle Gym: A play area with slides, walkways, tunnels, and climbing walls offering various levels of challenge for children.",
+        ]}
+      />
+      <div class="p-[60px] max-md:p-[10px]"></div>
+      <Card
+        image={academic2}
+        title={["Primary School Program", "(Grades 1-5)"]}
+        layout="right"
+        bodyContent="The Primary School Program fosters reflective thinking, equipping students to tackle real-world challenges. Through a trans-disciplinary approach, they master language skills for effective communication and critical analysis."
+        bulletPoints={[
+          "Math Marvels: Students emerge fluent in everyday computations, spatial lingo, data handling, pattern spotting, and more!",
+          "Personalised Progress: Activities that aim to develop motor skills, independent decision-making and vibrant social interactions!",
+          "Collaborative Learning: Students learn through keen observation, lively discussions and experimentation, fostering a sense of teamwork.",
+        ]}
+      />
+    </Section>
+  </div>
+  <div class="w-full bg-white">
+    <Section class="flex flex-col items-center !px-[50px] max-md:!px-[20px]">
+      <Card
+        image={academic3}
+        title={["Middle School Program", "(Grades 6-8)"]}
+        layout="left"
+        border
+        bodyContent="The Middle School Program nurtures critical thinking and ethical decision-making. Students develop abstract reasoning and gain a well-rounded perspective through diverse subjects."
+        bulletPoints={[
+          "DEAR Program: Fostering a love for good books, nurturing young minds with age-appropriate, thought-provoking reading materials.",
+          "Career Counselling: In-house career counselors nurture students' interests and aptitudes for informed decisions on higher education and careers.",
+          "Ethical Mastery: Nurture a student's mind to think critically, cultivate reasoning skills, encourage decision-making, and uphold moral values.",
+        ]}
+      />
+      <div class="p-[60px] max-md:p-[10px]"></div>
+      <Card
+        image={academic4}
+        title={["Senior Program", "(Grades 9-12)"]}
+        layout="right"
+        border
+        bodyContent="Building on the foundations laid in Middle School, our Senior Program cultivates critical thinking and goal-setting. Students engage with diverse subjects, gaining a holistic perspective and preparing them for real-world challenges with reflective thinking and language mastery."
+        bulletPoints={[
+          // "Academic Highlight - I",
+          // "Academic Highlight - II",
+          // "Academic Highlight - III",
+        ]}
+      />
+    </Section>
+  </div>
+
+  <div id="studentenrichment">
+    <StudentEnrichment />
+  </div>
+
+  <!-- <Achievements /> -->
+
+  <p class="pb-14 max-md:pb-1" />
+
+  <GoToCta />
+  <Footer />
+</Layout>
+
+<style>
+  .float {
+    position: fixed;
+    /* background-color:#25d366; */
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    /* box-shadow: 2px 2px 3px #999; */
+    z-index: 100;
+  }
+
+  .float > div {
+    opacity: 0;
+    transition: 0.6s all ease-in-out;
+  }
+  .float a:hover ~ div {
+    opacity: 1;
+  }
+
+  .my-float {
+    margin-top: 16px;
+  }
+</style>

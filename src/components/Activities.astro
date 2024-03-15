@@ -1,0 +1,109 @@
+---
+import Section from "./system/Section.astro";
+import Text from "./system/Text.astro";
+
+import mun from "../image/clubs/mun.jpeg";
+import design from "../image/clubs/cs-1.jpeg";
+import eco from "../image/clubs/eco.png";
+import humane from "../image/clubs/humane.jpeg";
+import music from "../image/clubs/music2.jpeg";
+import literary from "../image/clubs/literary.jpeg";
+import visarts from "../image/clubs/art.jpeg";
+import cuisine from "../image/clubs/cuisine.png";
+import perfarts from "../image/clubs/dance.jpeg";
+
+import activity1 from "../image/activities/1.jpg";
+import activity2 from "../image/activities/2.jpg";
+import activity3 from "../image/activities/3.png";
+import activity4 from "../image/activities/4.png";
+import activity5 from "../image/activities/5.png";
+import activity6 from "../image/activities/6.png";
+
+const clubs = [
+  {
+    title: ["Dance &", "Music"],
+    description:
+      "The Model United Nations Club offers students a practical understanding of <span>global diplomacy</span>. Immersed in discussions and procedural rules, they thrive in an atmosphere where mock MUNs prepare them for school-level conferences.",
+    thumbnail: activity2,
+  },
+  {
+    title: ["Yoga & ", "Kriya"],
+    description:
+      "Students learn to use modern tools like <span>Photoshop and Animation</span> to learn about design concepts. They learn how to innovate and create prototypes, applying basic design principles through collaborative experiments.",
+    thumbnail: activity5,
+  },
+  {
+    title: ["Debate Club &", "MUN"],
+    description:
+      "Students learn about <span>eco-friendly practices</span> and methods to make a positive impact on the environment. Through campaigns, students raise community awareness about the importance of going green.",
+    thumbnail: activity6,
+  },
+  {
+    title: ["15+ different", "Sports"],
+    description:
+      "Students learn to care for their community through drives and <span>outreach programs</span>. They also actively support and empower the less privileged while honing valuable life skills in the process.",
+    thumbnail: activity4,
+  },
+  {
+    title: ["NCC, Scouts &", "Guides"],
+    description:
+      "At Ekam, musical talents are celebrated with enthusiasm and passion. It caters to diverse musical tastes, offering voice coaching, <span>musical notation sessions, instrument lessons</span>, and opportunities for composing original scores.",
+    thumbnail: activity3,
+  },
+  {
+    title: ["Literary & ", "Eco club"],
+    description:
+      "Students participate in <span>creative writing, book reviews, poetry readings, and storytelling sessions</span> to foster language skills and create a vibrant space for literary exploration.",
+    thumbnail: activity1,
+  },
+  // {
+  //   title: ["Visual Arts", "Club"],
+  //   description:
+  //     "Encouraging students to bring imagination to life, we use various materials and processes including <span>paint, paper, sculpture, and pottery</span>. The club invites students to perceive colors, shapes, textures, and designs differently.",
+  //   thumbnail: visarts,
+  // },
+  // {
+  //   title: ["Performing Arts", "Club"],
+  //   description:
+  //     "This club supports active expression in <span>contemporary, classical, and western dance, drama, and theatre</span>. Students explore diverse styles, from narrative dances to plays, fostering excellence in their chosen form.",
+  //   thumbnail: perfarts,
+  // },
+  // {
+  //   title: ["Cuisine", "Club"],
+  //   description:
+  //     "The Cuisine club encourages a passion for culinary arts and cooking. Students explore <span>flameless cooking, preparing dishes from global cuisines</span> and develop their understanding of flavor, texture, & cooking techniques.",
+  //   thumbnail: cuisine,
+  // },
+];
+---
+
+<Section class="flex flex-row flex-wrap gap-5 justify-center items-center">
+  {
+    clubs.map((club) => (
+      <div
+        style={{
+          background: "linear-gradient(0deg, #c79e001c -2.33%, #FFF 29.76%)",
+          backdropFilter: "blur(16px)",
+          borderRadius: "24px",
+        }}
+        class="p-4 w-[400px] pb-6 border-[#B8B8B8]/60 border"
+      >
+        <div
+          class="w-full h-[320px] bg-cover bg-center rounded-2xl"
+          style={{
+            backgroundImage: `url(${club.thumbnail.src})`,
+          }}
+        />
+        <Text type="h4" class="mt-4 text-center">
+          <span class="text-yellow-500">{club.title[0]}</span>{" "}
+          <span>{club.title[1]}</span>
+        </Text>
+        {/*<Text
+          type="sm"
+          class="mt-2 [&>span]:text-yellow-500 [&>span]:font-bold"
+          set:html={club.description}
+        />*/}
+      </div>
+    ))
+  }
+</Section>

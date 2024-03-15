@@ -1,0 +1,637 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// import Hero from '../components/Hero.astro';
+import TopNavigationBar from "../components/TopNavigationBar.astro";
+
+import Collapsible from "../components/admissions/Collapsible.astro";
+
+// import Scholarship from '../components/register/scholarship.astro';
+import RegisterForm from "../components/admissions/admissionForm.astro";
+import "../global.css";
+
+import "@fontsource/nunito-sans";
+
+import Footer from "../components/landingPage/Footer.astro";
+import Text from "../components/system/Text.astro";
+
+import { Image } from "astro:assets";
+
+import PrePrimaryBG from "../images/curriculum/prePrimary.png";
+import PrimaryBG from "../images/curriculum/primary.png";
+import MiddleAndHighBG from "../images/curriculum/middle&High.png";
+
+import Section from "../components/system/Section.astro";
+import Slide from "../components/system/Slide.astro";
+
+// import slide1 from "../image/slides/1.jpeg";
+// import slide2 from "../image/slides/2.jpeg";
+// import slide3 from "../image/slides/3.jpeg";
+import slide1 from "../image/slides/4.jpeg";
+import slide2 from "../image/slides/5.jpeg";
+import slide3 from "../image/slides/8.jpeg";
+
+import slide1MB from "../image/slides/mb/special/1.png";
+import slide2MB from "../image/slides/mb/special/3.png";
+import slide3MB from "../image/slides/mb/2.png";
+
+import PhoneWhite from "../icons/PhoneWhite.svg";
+
+const faqs = [
+  {
+    question: "Payment Terms & Conditions",
+    answer: "",
+  },
+  {
+    question: "What are the admission requirements?",
+    answer: "",
+  },
+  {
+    question: "Is there an application deadline for admissions?",
+    answer: "",
+  },
+  {
+    question: "What are the tuition fees for the programs?",
+    answer: "",
+  },
+  {
+    question: "How do I schedule a campus visit?",
+    answer: "",
+  },
+];
+---
+
+<Layout
+  title="Admissions | Best International K12 Primary Schools South bengalore Electronic City"
+>
+  <main class="flex flex-col min-h-screen max-md:h-auto w-screen relative">
+    <div
+      class="flex-1 flex flex-col main-container max-md:h-auto min-h-screen w-screen"
+      id="scroll-area"
+      style={{
+        overflowY: "overlay",
+        overflowX: "hidden",
+      }}
+    >
+      <div class="flex flex-col max-md:h-auto min-h-screen relative">
+        <TopNavigationBar hideMenu applyNowButtonId="register-page-apply-now" />
+
+        <div
+          class="w-full flex-1 h-full relative p-12 py-2 flex flex-row max-md:flex-col justify-between items-center max-md:p-8 max-md:px-4"
+        >
+          <div class="w-full h-full absolute top-0 left-0 max-md:hidden">
+            <Slide
+              slides={[
+                {
+                  image_desktop: slide1.src,
+                  image_mobile: slide1MB.src,
+                  position: "bottom",
+                },
+                {
+                  image_desktop: slide2.src,
+                  image_mobile: slide2MB.src,
+                  position: "center",
+                },
+                {
+                  image_desktop: slide3.src,
+                  image_mobile: slide2MB.src,
+                  position: "bottom",
+                },
+              ]}
+              id="resiter-page-hero"
+            />
+          </div>
+
+          <div
+            class="w-full h-[110svh] absolute top-0 left-0 bg-red-100 hidden max-md:block"
+          >
+            <Slide
+              slides={[
+                {
+                  image_desktop: slide1MB.src,
+                  image_mobile: slide1MB.src,
+                  position: "center",
+                },
+                {
+                  image_desktop: slide2MB.src,
+                  image_mobile: slide2MB.src,
+                  position: "center",
+                },
+                {
+                  image_desktop: slide3MB.src,
+                  image_mobile: slide3MB.src,
+                  position: "center",
+                },
+              ]}
+              id="resiter-page-hero-mb"
+            />
+          </div>
+
+          <div
+            class="absolute w-full h-full top-0 left-0
+              bg-[linear-gradient(183deg,_rgba(0,_66,_29,_0.00)_31.29%,_#000_97.19%)]
+              max-md:bg-[linear-gradient(180deg,_rgba(0,_66,_29,_0.10)_10.71%,_#000_35.19%)]
+              z-20 block max-md:flex flex-col items-center"
+            style={{
+              // background: 'linear-gradient(183deg, rgba(0, 66, 29, 0.00) 31.29%, #000 97.19%)',
+              // 'linear-gradient(321deg, rgba(0, 66, 29, 0.10) -2.71%, #000 101.19%)'
+            }}
+          >
+          </div>
+
+          <div class="max-md:p-[24svh] max-md:block hidden"></div>
+
+          <div
+            class="h-full flex flex-row relative z-20 max-md:w-max max-md:self-center self-end"
+          >
+            <div
+              class="flex flex-col items-start max-md:items-center mb-10 max-md:mb-2"
+            >
+              <Text type="h1" class="text-white text-center">
+                Join our <span class="!not-italic">Family</span>
+              </Text>
+              <div class="pt-2"></div>
+              <Text
+                type="lg"
+                class="text-white max-md:text-center max-md:text-[15px] max-md:w-full"
+              >
+                Admissions open for the academic year <br
+                  class="hidden max-md:block"
+                /> 2024-25
+              </Text>
+              <div
+                class="pt-[36px] max-md:pt-[24px]"
+                id="register-form-container-mobile"
+              >
+              </div>
+              <!-- <div class="w-[382px] max-md:w-[85%]">
+                <Image src={awards} class="w-full" alt="Glentree Rank 1: " />
+              </div> -->
+            </div>
+          </div>
+          <div class="max-md:py-0"></div>
+          <RegisterForm />
+        </div>
+        <!-- <AdmissionMarquee class="max-md:!hidden" /> -->
+        <!-- <div class="w-[50px] h-[50px] down-arrow-button transition-all duration-500 rounded-[50%] bg-accent border-accent/60 border-[4px] absolute top-[97vh] left-[50%] z-[9999] flex items-center justify-center max-md:hidden">
+          <div class="w-[18px] h-[9px] down-arrow-icon">
+            <Image src={DownArrow} alt="Down Arrow" class="w-full h-full object-cover" />
+          </div>
+        </div> -->
+      </div>
+
+      <Section class="w-full flex flex-col items-center">
+        <Text type="h1">Admission <span class="not-italic">Process</span></Text>
+        <div class="pt-[60px]"></div>
+        <div class="flex flex-col gap-10">
+          <div class="flex flex-row gap-10">
+            <div class="flex flex-col items-center">
+              <Text type="subtitle" class="text-[#1C1C1C]/50">STEP</Text>
+              <Text type="h2" class="font-sans font-bold">01</Text>
+            </div>
+            <div>
+              <Text type="h2" class="max-md:text-[22px]">
+                The First <span>Interaction</span>
+              </Text>
+              <div class="p-3 max-md:p-1"></div>
+              <Text type="base">
+                The first step involves a crucial interaction between parents
+                and teachers. You can either click the Enquire Now button on our
+                website to send us your inquiry, or call us at <a href="tel:9900077180" class="text-primary text-decoration-line: underline"> +91 9900077180 </a> or <a href="tel:9900077181" class="text-primary text-decoration-line: underline">+91 9900077181 </a> to
+                arrange a visit in person. This will help us establish the
+                foundation for your child's educational journey with us.
+              </Text>
+            </div>
+          </div>
+          <div class="flex flex-row gap-10">
+            <div class="flex flex-col items-center">
+              <Text type="subtitle" class="text-[#1C1C1C]/50">STEP</Text>
+              <Text type="h2" class="font-sans font-bold">02</Text>
+            </div>
+            <div>
+              <Text type="h2" class="max-md:text-[22px]">
+                Online <span>Application Form</span>
+              </Text>
+              <div class="p-3 max-md:p-1"></div>
+              <Text type="base">
+                During your visit to the school, you can obtain the brochure and
+                application form for Rs. 1500/- (Non-Refundable) through cash,
+                cheque, or DD payable to Ekam School, Bengaluru.
+              </Text>
+            </div>
+          </div>
+          <div class="flex flex-row gap-10">
+            <div class="flex flex-col items-center">
+              <Text type="subtitle" class="text-[#1C1C1C]/50">STEP</Text>
+              <Text type="h2" class="font-sans font-bold">03</Text>
+            </div>
+            <div>
+              <Text type="h2" class="max-md:text-[22px]">
+                Entrance <span> Exam</span>
+              </Text>
+              <div class="p-3 max-md:p-1"></div>
+              <Text type="base">
+                After submitting the application form at the school campus, your child will take an entrance exam that covers essential subjects and languages. The answer sheets will be reviewed by the principal and program heads. We will then notify you of the exam results and your child's clearance status.
+              </Text>
+            </div>
+          </div>
+          <div class="flex flex-row gap-10">
+            <div class="flex flex-col items-center">
+              <Text type="subtitle" class="text-[#1C1C1C]/50">STEP</Text>
+              <Text type="h2" class="font-sans font-bold">04</Text>
+            </div>
+            <div>
+              <Text type="h2" class="max-md:text-[22px]">
+                Document <span> Submissions</span>
+              </Text>
+              <div class="p-3 max-md:p-1"></div>
+              <Text type="base">
+                You are required to submit the following documents to the
+                school:
+                <br />
+                <br />
+
+                <ol type="1" class="list-decimal list-inside">
+                  <li>
+                    A certified copy of the School Report from the previous
+                    academic year (if applicable).
+                  </li>
+                  <li>
+                    Three passport-sized photographs, two stamp-sized
+                    photographs of the child, and one photograph of the parents.
+                  </li>
+                  <li>A certified copy of the Child’s Birth Certificate.</li>
+                  <li>
+                    Certified copies providing details, including dates and
+                    grades of any Public/Board Examinations already taken (if
+                    applicable).
+                  </li>
+                  <li>
+                    Original documents of the submitted photocopies should be
+                    made available upon request for verification.
+                  </li>
+                </ol>
+              </Text>
+            </div>
+          </div>
+          <div class="flex flex-row gap-10">
+            <div class="flex flex-col items-center">
+              <Text type="subtitle" class="text-[#1C1C1C]/50">STEP</Text>
+              <Text type="h2" class="font-sans font-bold">05</Text>
+            </div>
+            <div>
+              <Text type="h2" class="max-md:text-[22px]">
+                Confirmation <span> of Admission</span>
+              </Text>
+              <div class="p-3 max-md:p-1"></div>
+              <Text type="base">
+                Upon receiving the admission acceptance letter, parents are
+                required to submit the fees by the specified date. Additionally,
+                the following documents must be submitted:
+
+                <br />
+                <br />
+
+                <ol type="1" class="list-decimal list-inside">
+                  <li>
+                    A certified copy of the Caste Certificate (if the student
+                    belongs to SC/ST/BC).
+                  </li>
+                  <li>
+                    Transfer Certificate/Record sheet from the last attended
+                    school (if applicable).
+                  </li>
+                  <li>
+                    Two passport-sized photographs of the attendants responsible
+                    for receiving/visiting the student.
+                  </li>
+                </ol>
+                <br />
+
+                 If, for any reason, the Transfer Certificate cannot be provided
+                at the time of admission, it must be furnished on or before the commencement
+                of the academic session.
+              </Text>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section>
+        <div
+          class="px-[60px] py-[46px] rounded-md border gap-8 border-primary border-dashed flex flex-row max-md:flex-col max-md:px-[20px] max-md:py-[20px] justify-between"
+          style={{
+            background: "rgba(255, 232, 204, 0.32)",
+          }}
+        >
+          <div>
+            <Text type="h3">Age <span>Criteria</span></Text>
+            <div class="pt-6"></div>
+            <Text type="base" class="font-regular">
+              To join Ekam School Bengaluru, children should meet the specified
+              age requirement by May 31st of the admission year. In some cases,
+              the School Admission Committee may consider exceptions to this age
+              limit based on the child's past academic performance and how they
+              do in our tests, as long as they have completed their studies in a
+              recognised school.
+            </Text>
+          </div>
+          <div class="flex flex-row gap-[20px] max-md:gap-[10px]">
+            <div class="w-full">
+              <Text
+                type="base"
+                class="bg-[#FFE3C1] py-[7px] text-primary font-bold text-center"
+              >
+                Grade
+              </Text>
+              <div
+                class="w-full py-[30px] max-md:py-[15px] px-[60px] max-md:px-[30px] flex flex-col gap-[13px] bg-white text-primary text-center [&>*]:min-w-max"
+              >
+                <Text type="base">IK1</Text>
+                <Text type="base">IK2</Text>
+                <Text type="base">IK3</Text>
+                <Text type="base">1</Text>
+                <Text type="base">2</Text>
+                <Text type="base">3</Text>
+                <Text type="base">4</Text>
+                <Text type="base">5</Text>
+                <!-- <Text type="base">6</Text>
+              <Text type="base">7</Text> -->
+              </div>
+            </div>
+            <div class="w-full">
+              <Text
+                type="base"
+                class="bg-[#FFE3C1] py-[7px] text-black font-bold text-center"
+              >
+                Age
+              </Text>
+              <div
+                class="w-full py-[30px] max-md:py-[15px] px-[48px] max-md:px-[20px] flex flex-col gap-[13px] bg-white text-black text-center [&>*]:min-w-max"
+              >
+                <Text type="base">3 Years</Text>
+                <Text type="base">4 Years</Text>
+                <Text type="base">5 Years</Text>
+                <Text type="base">6 Years</Text>
+                <Text type="base">7 Years</Text>
+                <Text type="base">8 Years</Text>
+                <Text type="base">9 Years</Text>
+                <Text type="base">10 Years</Text>
+                <!-- <Text type="base">6</Text>
+              <Text type="base">7</Text> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <div class="w-full items-center flex flex-col bg-white">
+        <div class="p-4"></div>
+        <Text type={"subtitle"} class="text-black">
+          Key Information to note:
+        </Text>
+        <!-- <Text type={'h2'} class='mt-2 text-black'>FAQs</Text> -->
+        <div class="p-4"></div>
+        <div class="flex flex-col items-center gap-5">
+          <Collapsible
+            title={"Payment Terms & Conditions"}
+            titleClass="font-sans font-bold text-xl max-md:text-lg"
+            class="mb-5"
+            collapseGroup="collapsible"
+            plusButtonClass="w-[35px] h-[35px] ml-1"
+          >
+            <ol
+              class="list-decimal relative left-[30px] marker:font-bold marker:text-lg w-[90%]"
+            >
+              <li>
+                <Text type="base">
+                  All payments are to be made in Indian Rupees only.
+                </Text>
+              </li>
+              <li>
+                <Text type="base">
+                  Upon admission, the first installment of tuition fees,
+                  admission fee, registration fee, and security deposit must be
+                  paid.
+                </Text>
+              </li>
+              <li>
+                <Text type="base">
+                  The second installment of tuition fees should be paid on or
+                  before 10th November of the academic year.
+                </Text>
+              </li>
+              <li>
+                <Text type="base">
+                  Annual charges will be collected at the beginning of the
+                  session.
+                </Text>
+              </li>
+              <li>
+                <Text type="base">
+                  Payment can be made in cash, Demand Draft, or local cheque,
+                  favoring 'EDIFY SCHOOL,' payable at Bengaluru.
+                </Text>
+              </li>
+              <li>
+                <Text type="base">
+                  Fees once paid will not be refunded or adjusted under any
+                  circumstances.
+                </Text>
+              </li>
+              <li>
+                <Text type="base">
+                  In the event of a student's withdrawal from the school in the
+                  middle of the term, the fee for the entire term must be paid.
+                </Text>
+              </li>
+              <li>
+                <Text type="base">
+                  Additional items such as uniforms, shoes, books, stationery,
+                  dining, and transportation will incur extra charges.
+                </Text>
+              </li>
+              <li>
+                <Text type="base">
+                  Transportation charges will be based on kilometers for 12
+                  months, including GPS charges.
+                </Text>
+              </li>
+              <li>
+                <Text type="base">
+                  The security deposit is refundable and will be returned when
+                  the child leaves the school.
+                </Text>
+              </li>
+              <li>
+                <Text type="base">
+                  Annual charges cover Taekwando, HOG Dramatic classes, Aniguru
+                  Animation, School Cinema value education, Mindedutainment,
+                  Edusports, Edurite, field visits, picnics, Olympiads,
+                  Interschool competition entry charges, medical fee, journal,
+                  magazines, newsletter, examination fee, maintenance fee, PTA,
+                  sports fee, activity fee, assignments, and worksheets, etc.
+                </Text>
+              </li>
+            </ol>
+          </Collapsible>
+          <Collapsible
+            title={"Refundable Cash Deposit"}
+            titleClass="font-sans font-bold text-xl max-md:text-lg"
+            class="mb-5"
+            collapseGroup="collapsible"
+            plusButtonClass="w-[35px] h-[35px] ml-1"
+          >
+            <Text type="base">
+              The refundable cash deposit is against damage to, or loss of
+              library books, laboratory equipment, computer facilities and other
+              equipment or assets of the school. It will be refunded without any
+              interest, after adjustment of dues, if any, on completion of the
+              child's studies at Ekam School.
+            </Text>
+          </Collapsible>
+        </div>
+        <div class="p-3 max-md:p-1"></div>
+      </div>
+
+      <Footer />
+    </div>
+
+    <a href="tel:7676310000">
+      <div class="fixed w-full h-14 bg-green-600 bottom-0 left-0 z-10 hidden max-md:flex items-center justify-center gap-4">
+        <div class="w-4 h-4">
+          <Image src={PhoneWhite} alt="Phone" class="w-full h-full object-cover" />
+        </div>
+        <Text type="sm">+91 76763 10000</Text>
+      </div>
+    </a>
+  </main>
+</Layout>
+
+<style>
+  .float {
+    position: fixed;
+    /* background-color:#25d366; */
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    /* box-shadow: 2px 2px 3px #999; */
+    z-index: 100;
+  }
+
+  .float > div {
+    opacity: 0;
+    transition: 0.6s all ease-in-out;
+  }
+  .float a:hover ~ div {
+    opacity: 1;
+  }
+
+  .my-float {
+    margin-top: 16px;
+  }
+
+  .down-arrow-button {
+    -moz-animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+    overflow: hidden;
+  }
+
+  .down-arrow-button:before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-image: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0) 70%
+    );
+    top: 0;
+    left: -100px;
+    opacity: 0.6;
+    animation: shineDownArrow 3s ease-out infinite;
+  }
+
+  @keyframes shineDownArrow {
+    0% {
+      left: -100px;
+    }
+    20% {
+      left: 100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  /* @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    20% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    } */
+  /* } */
+</style>
+
+<script>
+  // @@ts-ignore
+
+  // dev script temp
+  const applyNowButtons = document.querySelectorAll(
+    `[data-apply-now-button="register-page-apply-now"]`
+  );
+  applyNowButtons.forEach((applyNowButton) => {
+    applyNowButton?.addEventListener("click", () => {
+      if (window.innerWidth > 768) {
+        const registerFormContainer = document.getElementById(
+          "register-form-container-desktop"
+        );
+        registerFormContainer?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        const registerFormContainer = document.getElementById(
+          "register-form-container-mobile"
+        );
+        registerFormContainer?.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+
+  import collapsible, {
+    openCollapsible,
+  } from "../components/admissions/collapsible";
+  collapsible(".collapsible", null);
+
+  const downArrowButton = document.querySelector(".down-arrow-button");
+  document.addEventListener("scroll", (e) => {
+    // after scrolling 100px, show the button
+    if (window.scrollY > window.innerHeight / 5) {
+      downArrowButton?.classList.add("opacity-0");
+    }
+  });
+  const mainContainer = document.querySelector(".main-container");
+  if (mainContainer) {
+    // scroll to end
+    // mainContainer.scrollTo(0, mainContainer.scrollHeight)
+  }
+
+  // document.addEventListener('scroll', (e) => {
+
+  //   if (whatsAppButton) {
+  //     if (window.scrollY > 100) {
+  //       whatsAppButton?.classList.add('opacity-1')
+  //       whatsAppButton?.classList.remove('opacity-0')
+  //     } else {
+  //       whatsAppButton?.classList.remove('opacity-1')
+  //       whatsAppButton?.classList.add('opacity-0')
+  //     }
+  //   }
+  // })
+</script>

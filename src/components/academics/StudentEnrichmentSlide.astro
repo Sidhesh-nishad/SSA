@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+import Text from "../system/Text.astro";
+import slide1 from "../../images/slides/01.webp";
+import DeckCard from "../DeckCard.astro";
+
+
+const { slide, title, subtitle, description, showcase } = Astro.props;
+---
+
+<div
+  class="swiper-slide rounded-[35px] max-md:px-[0px] px-[16px] py-[0px] text-black"
+>
+  <div class="flex flex-row max-md:flex-col gap-14 max-md:gap-8 items-center">
+    <slot name="thumb" />
+
+
+    <div class="px-[16px] text-white">
+      <div class="flex flex-row justify-between items-center">
+        <Text type="h3" class="[&_span]:text-primary">
+          <slot name="title" />
+        </Text>
+      </div>
+  
+      <div class="pt-6"></div>
+  
+      <Text type="base" class="[&>span]:text-primary [&>span]:font-bold">
+        <slot name="body" />
+        <br />
+        <!-- <br />
+        The school has an excellent outlook on sports with its national and international size courts and sports infrastructure as well as expert professional coaches to support a variety of sport activities like <span>swimming, basketball, football, volleyball, chess, handball, netball, karate, cricket, skating, lawn tennis, badminton.</span> -->
+      </Text>
+
+      <p class="pt-3"></p>
+      <Text
+        type="regular"
+        class="uppercase text-primary underline tracking-widest font-semibold"
+      >
+        <slot name="cta" />
+      </Text>
+    </div>
+  </div>
+</div>

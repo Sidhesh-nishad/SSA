@@ -1,0 +1,475 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import TopNavigationBar from "../components/TopNavigationBar.astro";
+
+import Updates from "../components/landingPage/Updates/index.astro";
+import LFL from "../components/landingPage/LFL.astro";
+
+import Testimonial from "../components/landingPage/Testimonial.astro";
+import BigAdmissionCTA from "../components/BigAdmissionCTA.astro";
+import Hero from "./LandingPageHero.astro";
+
+import "../global.css";
+
+// import '@fontsource/nunito-sans';
+import GlentreeFamily from "../components/landingPage/GlentreeFamily.astro";
+import Footer from "../components/landingPage/Footer.astro";
+import Text from "../components/system/Text.astro";
+import Section from "../components/system/Section.astro";
+import YoutubeEmbed from "../components/YoutubeEmbed.astro";
+import Showcase from "./Showcase.astro";
+import GoToCta from "../components/GoToCta.astro";
+import Academics from "../components/landingPage/Academics.astro";
+import HeroTitle from "../components/HeroTitle.astro";
+import config from "../../config";
+import TopperCard from "../components/TopperCard.astro";
+import Heading from "../components/system/Heading.astro";
+const campusConfig = config.campus.find((c) => c.internalName === "kanakapura");
+import slide1 from "../images/slides/01.webp";
+// import slide2 from "../images/slides/02.webp";
+import slide3 from "../images/slides/03.webp";
+import slide4 from "../images/slides/04.webp";
+import slide5 from "../images/slides/05.webp";
+import transportBus from "../image/campus/transport.jpeg";
+import DeckCard from "../components/DeckCard.astro";
+import Connect from "../components/campus/Connect.astro";
+import blobSmall from "../fillers/blobSmall.png";
+import campusBG from "../image/campusBG.jpg";
+
+import campus1 from "../image/campus/classroom.jpeg";
+import campus2 from "../image/campus/cs-2.jpeg";
+import campus3 from "../image/campus/library.jpeg";
+import campus4 from "../image/campus/wonderroom.jpeg";
+import campus5 from "../image/campus/science-chem.jpeg";
+import campus6 from "../image/campus/science-bio.jpeg";
+import campus7 from "../image/campus/science-phy.jpeg";
+import campus8 from "../image/campus/bbcourt.png";
+import campus9 from "../image/campus/football.jpeg";
+import campus10 from "../image/campus/pool.jpeg";
+import campus11 from "../image/campus/crick.jpeg";
+import campus12 from "../image/campus/skating.jpg";
+import campus13 from "../image/campus/throwball.jpg";
+import campus14 from "../image/campus/bb2.jpg";
+import campus15 from "../image/campus/football2.jpeg";
+import campus16 from "../image/campus/swim2.jpeg";
+
+
+import { Image } from "astro:assets";
+import Gallery from "../components/Gallery.astro";
+import GalleryWithDescription from "../components/GalleryWithDescription.astro";
+
+const toppers = campusConfig?.toppers;
+---
+
+<Layout
+  title="Campus | Best International K12 Primary Schools South bengalore Electronic City"
+>
+  <div class="flex flex-col">
+    <TopNavigationBar />
+    <div
+      class="h-[70svh] flex"
+      style="background: linear-gradient(360deg, #1B2226 0%, #052B4C 52.08%, #1370A7 100%);"
+    >
+      <Hero
+        config={{ title: "Welcome to EKAM", bgImage: campus1 }}
+        showSlide={true}
+        slideImages={[
+          { slide: campusBG.src, position: "center 64%", type: "image" },
+        ]}
+        contentDirection="items-end"
+        className="overflow-hidden font-roundo"
+      >
+        <div slot="title">
+          <Text type="h2">Discover our Campus</Text>
+          <div class="p-1"></div>
+          <Text type="base" class="text-white w-[65%] max-md:w-full">
+            Located near the bustling Electronic City, our campus is surrounded
+            by lush greenery , offering a peaceful environment for focused
+            education.
+          </Text>
+        </div>
+      </Hero>
+    </div>
+  </div>
+
+  <Section class="items-start text-left">
+    <!-- <Text type="subtitle" class='!text-left'>
+      INSPIRING FEATS
+    </Text>
+    <p class="p-2"></p> -->
+    <div class="flex flex-row justify-between">
+      <div>
+        <Text type="h2">Our Facilities</Text>
+        <Text type="lg">
+          Our Philosophy: Empowering Through <span class="text-primary"
+            >Inquiry</span
+          >
+        </Text>
+      </div>
+      <div class="w-[130px] max-md:w-[60px] flex-shrink-0">
+        <Image
+          class="w-full h-full object-contain"
+          src={blobSmall}
+          alt="blob"
+        />
+      </div>
+    </div>
+
+    <div
+      class="mt-[60px] w-full flex flex-col items-center px-[44px] max-md:px-[0px] gap-20 max-md:gap-16"
+    >
+      <div class="flex flex-row max-md:flex-col w-full gap-16 justify-between">
+        <DeckCard
+          class="relative left-2 max-md:-left-2"
+          images={[
+            { src: campus3.src, alt: "campus1" },
+            { src: campus1.src, alt: "campus1" },
+            { src: campus2.src, alt: "campus1" },
+          ]}
+          target="classroom-facilities"
+          id="deck-classroom-facilities"
+        />
+        <div>
+          <Text type="h3">
+            <span class="text-primary">Academic</span> Facilities
+          </Text>
+          <div class="p-2"></div>
+          <Text type="base" class="w-[90%]">
+            Step into our modern, spacious classrooms equipped with the latest
+            educational technology. We prioritise comfort and up-to-date
+            resources to support your child’s optimal learning experience.
+            <br />
+            <br />
+            <ul class="list-inside list-disc flex flex-col gap-2">
+              <li>Digitally Enabled Classrooms</li>
+              <li>Wonder Room for Pre primary</li>
+              <li>Well-stocked libraries</li>
+              <li>Multi-purpose Amphitheatres</li>
+              <li>CC TV Monitoring for added security.</li>
+            </ul>
+          </Text>
+          <div class="p-3"></div>
+          <Text
+            type="sm"
+            class="uppercase text-primary underline tracking-widest font-semibold cursor-pointer"
+            data-modal-target="classroom-facilities"
+            data-target-deck="deck-classroom-facilities"
+          >
+            View Facilities
+          </Text>
+        </div>
+      </div>
+      <div class="flex flex-row max-md:flex-col w-full gap-20 justify-between">
+        <div class="max-md:order-2">
+          <Text type="h3">
+            <span class="text-primary">STEM</span> Labs
+          </Text>
+          <div class="p-2"></div>
+          <Text type="base" class="w-[90%]">
+            Explore our modern STEM labs at Ekam, where curiosity meets
+            innovation. They are meticulously designed, adhering to the highest
+            safety standards. Here, students embark on hands-on experiments,
+            unlocking the mysteries of science and technology in an environment
+            that sparks intellectual curiosity and creativity.
+          </Text>
+          <div class="p-3"></div>
+          <Text
+            type="sm"
+            class="uppercase text-primary underline tracking-widest font-semibold cursor-pointer"
+            data-modal-target="science-labs"
+            data-target-deck="deck-science-labs"
+          >
+            View Labs
+          </Text>
+        </div>
+        <DeckCard
+          class="relative"
+          images={[
+            { src: campus6.src, alt: "campus1" },
+            { src: campus7.src, alt: "campus2" },
+            // {src: slide3, alt: 'campus3'},
+          ]}
+          target="science-labs"
+          id="deck-science-labs"
+        />
+      </div>
+      <div class="flex flex-row max-md:flex-col w-full gap-20 justify-between">
+        <DeckCard
+          class="relative left-2 max-md:-left-2"
+          images={[
+            { src: campus9.src, alt: "campus1" },
+            { src: campus10.src, alt: "campus2" },
+            // {src: slide3, alt: 'campus3'},
+          ]}
+          target="sports-facilities"
+          id="deck-sports-facilities"
+        />
+        <div>
+          <Text type="h3">
+            <span class="text-primary">Sports</span> Facilities
+          </Text>
+          <div class="p-2"></div>
+          <Text type="base" class="w-[90%]">
+            Sports ensure the good physical, mental and emotional health of children.
+            Ekam International has outstanding infrastructure with vibrant sports facilities. 
+            <br/><br/>
+            School has two magnificent grounds for football, kabaddi, kho kho and athletics, well structured basketball and volleyball courts, well equipped & well netted cricket arena, well fenced skating arena with smooth flooring. Indoor games like chess, carom, TT etc along with one well designed & structured swimming pool.
+
+            <!-- International size courts and sports infrastructure as well as
+            expert professional coaches support a variety of sport activities
+            like swimming, basketball, football, volleyball, chess, handball,
+            netball, karate, cricket, skating, lawn tennis, and
+            badminton.
+            <br />
+            <br />
+             The students are also exposed to opportunities to participate in
+            varied recreational programs that include gymnastics, aerobics,
+            yoga, athletics and exercise. -->
+          </Text>
+          <div class="p-3"></div>
+          <Text
+            type="sm"
+            class="uppercase text-primary underline tracking-widest font-semibold cursor-pointer"
+            data-modal-target="sports-facilities"
+            data-target-deck="deck-sports-facilities"
+          >
+            View Sport Facilities
+          </Text>
+        </div>
+      </div>
+      <!-- <div class="flex flex-row max-md:flex-col w-full gap-20 justify-between">
+        <div class="max-md:order-2">
+          <Text type="h3">
+            <span class="text-primary italic">Extra-curricular</span> Facilities
+          </Text>
+          <div class="p-2"></div>
+          <Text type="base" class="w-[90%]">
+            At Ekam Edify, we’re equipped with modern facilities and a dedicated
+            faculty to support a diverse range of student interests. From
+            Literature, Performing Arts, Visual Arts, Music, to hands-on
+            experiences in Design & Technology, we offer a comprehensive array
+            of enriching activities for our students.
+          </Text>
+          <div class="p-3"></div>
+          <Text
+            type="sm"
+            class="uppercase text-primary underline tracking-widest font-semibold cursor-pointer"
+            data-modal-target="extra-curricular-facilities"
+            data-target-deck="deck-extra-curricular-facilities"
+          >
+            View Facilities
+          </Text>
+        </div>
+        <DeckCard
+          class="relative"
+          images={[
+            { src: slide1.src, alt: "campus1" },
+            { src: slide1.src, alt: "campus2" },
+            // {src: slide3, alt: 'campus3'},
+          ]}
+          target="extra-curricular-facilities"
+          id="deck-extra-curricular-facilities"
+        />
+      </div> -->
+    </div>
+  </Section>
+
+  <div
+    class="w-full rounded-t-[120px] max-md:rounded-t-[30px] max-md:px-[30px] max-md:py-[40px]
+      bg-black-100 pt-[98px] px-[66px] h-[620px] text-white
+      relative
+      overflow-hidden"
+    style={{
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+    }}
+  >
+    <div class="absolute w-full h-full top-0 left-0">
+      <Image
+        src={transportBus}
+        alt="transportBus"
+        class="w-full h-full object-cover"
+      />
+      <div
+        class="absolute w-full h-full top-0 left-0
+          bg-[linear-gradient(88deg,_rgba(0,_0,_0,_0.87)_24.8%,_rgba(0,_0,_0,_0.00)_70%)]
+          max-md:bg-[linear-gradient(182deg,_rgba(0,_0,_0,_0.86)_49.8%,_rgba(0,_0,_0,_0.00)_220%)]"
+      >
+      </div>
+    </div>
+    <div class="relative z-10">
+      <Text type="h2">Transport <span>Vehicles</span></Text>
+      <div class="p-3"></div>
+      <Text type="base" class="w-[50%]">
+        Ekam International has 20 buses well equipped with GPS & CCTV. Ekam school buses are spacious with a required capacity to accommodate students. Every bus has a teacher and helper to ensure proper discipline & safety of students. School bus drivers are responsible to pick & drop the children to their respective stops.
+      </Text>
+      <div class="p-3"></div>
+      <div class="flex flex-row items-center">
+        <div class="w-[14px] h-[17px]">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="100%"
+            height="100%"
+            viewBox="0 0 14 17"
+            fill="none"
+          >
+            <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="white"
+            ></path>
+          </svg>
+        </div>
+        <div class="px-2"></div>
+        <Text type="base">GPS Enabled Buses</Text>
+      </div>
+      <div class="p-2"></div>
+      <div class="flex flex-row items-center">
+        <div class="w-[14px] h-[17px]">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="100%"
+            height="100%"
+            viewBox="0 0 14 17"
+            fill="none"
+          >
+            <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="white"
+            ></path>
+          </svg>
+        </div>
+        <div class="px-2"></div>
+        <Text type="base">Equipped with CCTV</Text>
+      </div>
+      <div class="p-2"></div>
+      <div class="flex flex-row items-center">
+        <div class="w-[14px] h-[17px]">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="100%"
+            height="100%"
+            viewBox="0 0 14 17"
+            fill="none"
+          >
+            <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="white"
+            ></path>
+          </svg>
+        </div>
+        <div class="px-2"></div>
+        <Text type="base">Bus attendant and teacher accompany students</Text>
+      </div>
+    </div>
+  </div>
+  <GoToCta />
+
+  <div id="contact-us" style="scroll-margin: 60px;">
+    <Connect
+      details={{
+        phoneNo: {
+          label: "Call us On",
+          value: "+91 80 26667333, +91 80 26667444",
+          type: "contact",
+        },
+        workingHours: {
+          label: "Mail us at",
+          value: "info@insightacademy.in",
+          type: "mail",
+        },
+        address: {
+          label: "We are here",
+          value:
+            "#20, Vasanthpura Main Road, Off Kanakapura Road, Bangalore – 560 062",
+          type: "address",
+        },
+      }}
+      mapEmbedLink="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248939.1866465653!2d77.41886883961928!3d12.864269098588453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae159019e03bd5%3A0x701981105f182a0b!2sEdify%20School%20Kanakapura%20Main%20Road!5e0!3m2!1sen!2sin!4v1695475136575!5m2!1sen!2sin"
+    />
+  </div>
+  <Footer />
+
+  <Gallery
+    id="classroom-facilities"
+    gallery={[
+      { src: campus1.src, caption: "Digitally Enabled Classrooms" },
+      { src: campus4.src, caption: "Wonder Room" },
+      { src: campus3.src, caption: "Well-stocked Library" },
+    ]}
+  />
+
+  <!-- <Gallery
+    id="science-labs"
+    gallery={[
+      { src: campus7.src, caption: "Physics Lab" },
+      { src: campus6.src, caption: "Biology Lab" },
+      { src: campus5.src, caption: "Chemistry Lab" },
+      { src: campus2.src, caption: "Computer Science Lab" },
+    ]}
+  /> -->
+  <GalleryWithDescription
+    id="science-labs"
+    gallery={[
+      { 
+        src: campus7.src,
+        caption: "Physics Lab",
+        description: 'The school has a spacious and well maintained Physics laboratory to carry out various experiments. It is also equipped with relevant upgraded equipments to cater the needs of various curriculum across all grades.',
+      },
+      { 
+        src: campus6.src,
+        caption: "Biology Lab",
+        description: 'Explore our vast library, a treasure trove of knowledge with a diverse collection of books and journals, to fuel the academic journey.',
+      },
+      { 
+        src: campus5.src,
+        caption: "Chemistry Lab",
+        description: 'Ekam international school  has a well ventilated, spacious chemistry lab which is equipped with all modern amenities, apparatus and chemicals.',
+      },
+      { 
+        src: campus2.src,
+        caption: "Computer Science Lab",
+        description: "Ekam International's IT lab, equipped with 45 computers, fosters digital literacy. Introducing computing in our curriculum emphasizes computational skills and online safety.",
+      },
+    ]}
+  />
+
+  <Gallery
+    id="sports-facilities"
+    gallery={[
+      { src: campus10.src, caption: "Swimming Pool" },
+      { src: campus8.src, caption: "Basketball Court" },
+      { src: campus9.src, caption: "Football Ground" },
+      { src: campus11.src, caption: "Cricket Ground" },
+      { src: campus12.src, caption: "Skating Ring" },
+      { src: campus13.src, caption: "Throwball Court" },
+      { src: campus14.src, caption: "Basketball Court" },
+      { src: campus15.src, caption: "Football Court" },
+      { src: campus16.src, caption: "Swimming Pool" },
+    ]}
+  />
+
+  <!-- <Gallery
+    id="extra-curricular-facilities"
+    gallery={[{ src: slide1.src, caption: "Extra-curricular Facilities" }]}
+  /> -->
+</Layout>
+
+<style>
+  .float {
+    position: fixed;
+    /* background-color:#25d366; */
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    /* box-shadow: 2px 2px 3px #999; */
+    z-index: 100;
+  }
+
+  .float > div {
+    opacity: 0;
+    transition: 0.6s all ease-in-out;
+  }
+  .float a:hover ~ div {
+    opacity: 1;
+  }
+
+  .my-float {
+    margin-top: 16px;
+  }
+</style>

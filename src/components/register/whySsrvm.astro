@@ -1,0 +1,159 @@
+---
+import clubsThumb from "../../images/clubsThumb.png";
+import coscholasticsThumb from "../../images/coscholasticsThumb.png";
+import FilledArrowCircle from "../icons/FilledArrowCircle.astro";
+import Constrain from "../system/Constrain.astro";
+import bgPattern from "../../images/Patterns/pattern1.png";
+import Text from "../system/Text.astro";
+import { Image } from "astro:assets";
+import DeckCard from "../DeckCard.astro";
+import blobBG from "../../images/Patterns/Group-6.png";
+import earthLab from "../../images/earthLab.png";
+import taekwondo from "../../images/coscholastics/Taekwondo.jpg";
+import bulletStar from "../../images/bulletStar.svg";
+import bulletStarGreen from "../../images/bulletStarGreen.svg";
+import Gallery from "../Gallery.astro";
+
+import facility1 from "../../image/facilities/1.png";
+import facility2 from "../../image/facilities/2.png";
+import facility3 from "../../image/facilities/3.png";
+import facility4 from "../../image/facilities/4.png";
+import facility5 from "../../image/facilities/5.png";
+import facility6 from "../../image/facilities/6.png";
+import facility7 from "../../image/facilities/7.png";
+import facility8 from "../../image/facilities/8.png";
+
+import slide4 from "../../images/register/slides/4.png";
+import slide5 from "../../images/register/slides/5.jpg";
+
+import artCraft from "../../image/facilities/artCraft.jpg";
+import badminton from "../../image/facilities/badminton.jpg";
+import computerLab from "../../image/facilities/computerLab.jpg";
+import football from "../../image/facilities/football.jpg";
+import library from "../../image/facilities/library.jpg";
+import montessoriLab from "../../image/facilities/montessoriLab.jpg";
+import tableTennis from "../../image/facilities/tableTennis.jpg";
+import compositeLab from "../../image/facilities/compositeLab.jpg";
+import playArea from "../../image/facilities/playArea.jpg";
+import digitallyEnabledClassroom from "../../image/facilities/digitallyEnabledClassroom.jpg";
+
+import gallery1 from "../../images/register/gallery/1.png";
+import gallery2 from "../../images/register/gallery/2.png";
+import gallery3 from "../../images/register/gallery/3.png";
+import gallery4 from "../../images/register/gallery/4.png";
+import gallery5 from "../../images/register/gallery/5.png";
+import gallery6 from "../../images/register/gallery/6.png";
+import gallery7 from "../../images/register/gallery/7.jpg";
+
+const starSVG = (
+  color = "#0A5E2F"
+) => `<svg width="100%" height="100%" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path id="Vector" d="M9.19531 0.136719L7.39532 6.53672L0.195312 8.13672L7.39532 9.73672L9.19531 16.1367L10.9953 9.73672L18.1953 8.13672L10.9953 6.53672L9.19531 0.136719Z" fill="${color}"/>
+  </svg>
+`;
+
+const starEarthy = starSVG("#707861");
+---
+
+<div
+  class="py-14 max-md:py-8 relative text-center flex flex-col items-center"
+  style={{
+    background:
+      "linear-gradient(249.28deg, #FBFFF7 0%, #F6FFED 0%, #FFFAF7 100%)",
+  }}
+>
+  <div class="w-[263px] h-[279px] absolute right-0 top-0 z-20 max-md:hidden">
+    <Image
+      src={blobBG}
+      alt="Blob Background"
+      class="w-full h-full object-contain object-right opacity-10"
+    />
+  </div>
+  <div class="p-2 max-md:p-1"></div>
+  <!-- <Text type={'subtitle'} style={{ opacity: 0.8, color: '#121212' }}>WHY SSRVM?</Text> -->
+  <Text type={"h2"} class="text-black mt-3 max-md:mt-4">
+    Nature-friendly <span>Campus</span>
+  </Text>
+  <Text
+    type={"base"}
+    class="mt-4 font-medium text-black w-[60%] max-md:w-[90%]"
+  >
+    Nestled within greenery, our campus provides a stress-free environment.
+    Complemented by our open classrooms, it offers a unique blend of nature and
+    modern education.
+  </Text>
+  <p class="p-3"></p>
+  <Constrain class="flex flex-col w-full items-center gap-8">
+    <div
+      class="flex flex-row gap-24 items-center w-full justify-center mt-6 text-black max-w-[1070px] max-md:w-full max-md:flex-col max-md:items-center"
+    >
+      <DeckCard
+        images={[slide4, slide5]}
+        class="mt-6"
+        id="deck-facility"
+        target="gallery-facility"
+      />
+      <div class="flex flex-col items-start text-left gap-6 max-md:px-8 px-0">
+        <Text type="h3" class="text-[#707861] !text-3xl">Lush green campus</Text
+        >
+        <!-- <div class="flex flex-row items-center">
+          <div class="w-[16px] h-[18px]">
+            <Image src={bulletStarGreen} class="w-full h-full object-cover" alt="bullet icon" />
+          </div>
+          <Text type="regular" class="font-bold ml-[10px]">8 acres of lush green campus</Text>
+        </div>  -->
+        <div class="flex flex-row items-center">
+          <div class="w-[16px] h-[18px]" set:html={starEarthy} />
+          <Text type="regular" class="font-bold ml-[10px]"
+            >CCTV Equipped Campus</Text
+          >
+        </div>
+        <div class="flex flex-row items-center">
+          <div class="w-[16px] h-[18px]" set:html={starEarthy} />
+          <Text type="regular" class="font-bold ml-[10px]"
+            >Digitally Enabled Classrooms</Text
+          >
+        </div>
+        <div class="flex flex-row items-center">
+          <div class="w-[16px] h-[18px]" set:html={starEarthy} />
+          <Text type="regular" class="font-bold ml-[10px]"
+            >GPS Enabled Buses</Text
+          >
+        </div>
+        <div class="flex flex-row items-center">
+          <div class="w-[16px] h-[18px]" set:html={starEarthy} />
+          <Text type="regular" class="font-bold ml-[10px]"
+            >Well-Equipped Sports Facilities</Text
+          >
+        </div>
+        <Text
+          type="sm"
+          class="uppercase text-[#707861] underline tracking-widest font-semibold cursor-pointer"
+          data-modal-target="gallery-facility"
+          data-target-deck="deck-facility"
+        >
+          View Facilities
+        </Text>
+      </div>
+    </div>
+  </Constrain>
+
+  <Gallery
+    id="gallery-facility"
+    gallery={[
+      {
+        src: digitallyEnabledClassroom,
+        caption: "Digitally Enabled Classroom",
+      },
+      { src: playArea, caption: "Play Area" },
+      { src: library, caption: "Well stocked Library" },
+      { src: compositeLab, caption: "Composite Lab" },
+      { src: tableTennis, caption: "Table Tennis" },
+      { src: badminton, caption: "Badminton" },
+      { src: computerLab, caption: "Computer Lab" },
+      { src: artCraft, caption: "Art & Craft" },
+      { src: football, caption: "Football" },
+      { src: montessoriLab, caption: "Montessori Lab" },
+    ]}
+  />
+</div>

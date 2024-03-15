@@ -1,0 +1,102 @@
+---
+import clubsThumb from "../../images/clubsThumb.png";
+import coscholasticsThumb from "../../images/coscholasticsThumb.png";
+import FilledArrowCircle from "../icons/FilledArrowCircle.astro";
+import CampusCard from "./campusCard.astro";
+import KanakpuraCampusImage from "../../images/campus/knk/knk.png";
+import Constrain from "../system/Constrain.astro";
+import overviewRegisterPageBG from "../../images/overviewRegisterPageBG.png";
+import Text from "../system/Text.astro";
+import { Image } from "astro:assets";
+import DeckCard from "../DeckCard.astro";
+import earthLab from "../../images/earthLab.png";
+import taekwondo from "../../images/coscholastics/Taekwondo.jpg";
+import bulletStar from "../../images/bulletStar.svg";
+import bulletStarGreen from "../../images/bulletStarGreen.svg";
+import Gallery from "../Gallery.astro";
+
+import gallery1 from "../../images/register/gallery/1.png";
+import gallery2 from "../../images/register/gallery/2.png";
+import gallery3 from "../../images/register/gallery/3.png";
+import gallery4 from "../../images/register/gallery/4.png";
+import gallery5 from "../../images/register/gallery/5.png";
+import gallery6 from "../../images/register/gallery/6.png";
+import gallery7 from "../../images/register/gallery/7.jpg";
+---
+
+<div
+  class="py-14 max-md:py-8 relative text-center flex flex-col items-center"
+  style={{
+    background:
+      "linear-gradient(249.28deg, #FBFFF7 0%, #F6FFED 0%, #FFFAF7 100%)",
+  }}
+>
+  <Image
+    src={overviewRegisterPageBG}
+    class="w-screen h-[130px] max-md:h-[60px] bg-cover bg-top absolute top-0 left-0 -z-1"
+    role="presentation"
+    alt="decoration"
+  />
+  <div class="p-4 max-md:p-1"></div>
+  <Text type="h2" class="text-center text-black mt-3">
+    Our <span class="text-accent2">Campus</span>
+  </Text>
+  <p class="p-3"></p>
+  <Constrain class="flex flex-col w-full items-center gap-8">
+    <div
+      class="flex flex-row gap-12 w-full justify-between mt-6 text-black max-w-[1070px] max-md:w-full max-md:flex-col max-md:items-center max-md:hidden"
+    >
+      <CampusCard
+        image={KanakpuraCampusImage}
+        class="mr-8"
+        name="kanakpura Road"
+        desc="Centrally located in the IT corridor of Bangalore."
+      />
+      <div class="flex flex-col items-start text-left gap-6 max-md:px-8 px-0">
+        <Text type="h3" class="text-blue-400">Kanakpura Road</Text>
+
+        <Text type="base" class="font-semibold">
+          Explore our Kanakpura Road Campus
+        </Text>
+        <div class="flex flex-row items-center">
+          <div class="w-[16px] h-[18px]">
+            <Image
+              src={bulletStarGreen}
+              class="w-full h-full object-cover"
+              alt="bullet icon"
+            />
+          </div>
+          <Text type="regular" class="font-bold ml-[10px]">Computer Lab</Text>
+        </div>
+        <div class="flex flex-row items-center">
+          <div class="w-[16px] h-[18px]">
+            <Image
+              src={bulletStarGreen}
+              class="w-full h-full object-cover"
+              alt="bullet icon"
+            />
+          </div>
+          <Text type="regular" class="font-bold ml-[10px]">
+            Craft Room
+          </Text>
+        </div>
+        <div class="flex flex-row items-center">
+          <div class="w-[16px] h-[18px]">
+            <Image
+              src={bulletStarGreen}
+              class="w-full h-full object-cover"
+              alt="bullet icon"
+            />
+          </div>
+          <Text type="regular" class="font-bold ml-[10px]">Library</Text>
+        </div>
+        <div
+          class="cursor-pointer"
+          data-modal-target="gallery-clubs"
+          data-target-deck="deck-card-clubs"
+        >
+        </div>
+      </div>
+    </div>
+  </Constrain>
+</div>

@@ -1,0 +1,26 @@
+---
+import address from '../../icons/connect/address.svg?raw'
+import mail from '../../icons/connect/mail.svg?raw'
+import contact from '../../icons/connect/contact.svg?raw'
+import time from '../../icons/connect/time.svg?raw'
+interface Props {
+    type: 'contact' | 'mail' | 'address' | undefined,
+    className?: string
+}
+
+const icons = {
+    contact: contact,
+    mail: mail,
+    address: address,
+    time: time
+}
+
+const {type, className} = Astro.props as Props
+---
+<div class={className}>
+    {
+     <Fragment set:html={type &&
+        icons[type] 
+    } />
+    }
+</div>

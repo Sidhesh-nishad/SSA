@@ -1,0 +1,88 @@
+---
+import campusImage from "../image/gotoctabg.jpeg";
+import FilledArrowCircle from "./icons/FilledArrowCircle.astro";
+import Constrain from "./system/Constrain.astro";
+import Text from "./system/Text.astro";
+---
+
+<div
+  class="p-xl flex flex-row items-center justify-between self-stretch shrink-0 relative overflow-hidden
+        max-md:p-m max-sm:items-start card"
+
+  onclick="window.location.href='/admissions'"
+>
+  <div
+    class="absolute inset-0 img"
+    style=`
+background: linear-gradient(
+  to left,
+  rgba(27, 34, 38, 0.6),
+  rgba(27, 34, 38, 1)
+), url(${campusImage.src});
+background-size: cover;
+background-repeat: no-repeat;
+`
+  >
+  </div>
+  <div class="flex justify-between w-full max-w-[1500px] m-auto items-center">
+    <div
+      class="flex flex-col gap-10 items-start justify-start shrink-0 relative"
+    >
+      <div class="flex flex-col gap-[30px]">
+        <div class="flex gap-8 flex-col">
+          <Text type="h2" class="text-white">
+            Ready for Growth<br />
+             and <span>Exploration?</span>
+          </Text>
+          <div
+            class="flex flex-col max-md:flex-row max-md:items-center max-md:w-[calc(100vw-40px)] max-md:justify-between"
+          >
+            <Text type="lg" class="text-white font-normal w-auto flex-1 max-md:!text-base">
+              Admission open for <a
+                href="/admissions"
+                class="text-primary underline font-bold">AY 2024-25</a
+              > now!
+            </Text>
+            <p
+              class="font-display uppercase text-gray-800 text-4xl font-bold max-sm:text-[28px] flex gap-3 items-center max-s:text-2xl"
+            >
+              <span class="max-s:flex hidden">
+                <FilledArrowCircle
+                  svgClass={"w-[50px] h-[50px]"}
+                  color={"#FF6F24"}
+                />
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-primary max-s:hidden button">
+      <FilledArrowCircle
+        svgClass={"w-[100px] h-[100px] max-md:w-[80px] max-md:h-[80px]"}
+        color={"#FF6F24"}
+      />
+    </div>
+  </div>
+</div>
+
+<style>
+  .card {
+    cursor: pointer;
+  }
+  .card:hover .img {
+    transform: scale(1.05);
+  }
+  .card:hover .button {
+    transform: translateX(40px);
+  }
+  .button {
+    transition: transform 0.5s ease-in-out;
+  }
+  .img {
+    z-index: -1;
+    transition: transform 0.3s ease-in-out;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+</style>

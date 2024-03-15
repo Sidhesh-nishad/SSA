@@ -1,0 +1,65 @@
+---
+import Collapsible from "./admissions/Collapsible.astro";
+import Text from "./system/Text.astro";
+
+const faqs = [
+  {
+    question: "How do I apply for admission to SSA?",
+    answer: `You can apply online/offline. For applying online, <a href="#" data-form-scroll class="underline">Use the form</a> above and fill up the details. You can also directly contact the admission team by calling on +91-9901393284 or write an email to bangalore.north@ssrvm.org`,
+  },
+  {
+    question: "What are the admission requirements?",
+    answer: `
+    The admission requirements are as follows : <br /><br />
+    <span class='font-bold'>Age Criteria</span>: As on 1st June, <br/>
+    <ul>
+      <li>PP1: 3 Years</li>
+      <li>PP2: 4 Years</li>
+      <li>PP3: 5 Years</li>
+      <li>Grade1: 6 Years</li>
+    </ul><br/><br/> 
+    <span class='font-bold'>Documents to be submitted:</span> <br/>
+    <ol>
+      <li>Recent 3 Passport size photographs of the student.</li>
+      <li>One Family Photo (3R Size)</li>
+      <li>Copy of Birth Certificate.</li>
+      <li>Copy of Aadhar Card of Student, Parents/Guardians.</li>
+      <li>Original Transfer Certificate.</li>
+      <li>Marks Card copy from previous school.</li>
+      <li>Migration copy / passport copy of the child.</li>
+      <li>Health Certificate of the student.</li>
+    </ol>
+    `,
+  },
+  {
+    question: "Why should I choose SSA for admission?",
+    answer:
+      "SSA schools provide world-class holistic education that is aimed at all- round development of the students’ personalities by facilitating Cognitive, Physical, Emotional, Social and Spiritual growth.",
+  },
+  {
+    question: "How do I schedule the campus tour or visit?",
+    answer:
+      "You may call us at +91-9901393284 to schedule a time to visit and meet the admissions team and the Coordinator. Walk-Ins are preferred on weekdays.",
+  },
+];
+---
+
+<div class="flex flex-col items-center gap-5">
+  {
+    faqs.map(({ question, answer }) => (
+      <Collapsible
+        title={question}
+        titleClass="font-sans font-bold text-xl max-md:text-lg"
+        class="mb-5"
+        collapseGroup="collapsible"
+        plusButtonClass="w-[35px] h-[35px] ml-1"
+      >
+        <Text
+          type={"regular"}
+          set:html={answer}
+          class="[&>a]:underline [&>a]:text-blue-700"
+        />
+      </Collapsible>
+    ))
+  }
+</div>

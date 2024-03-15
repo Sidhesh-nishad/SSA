@@ -1,0 +1,17 @@
+---
+    const {items, class: classs,label } = Astro.props
+    import Text from "./Text.astro";
+---
+<div class=`px-xl py-l ${classs} max-sm:px-m`>
+    <div class="flex gap-10 max-sm:flex-col  max-sm:gap-3 flex-wrap">
+        <div class="flex gap-r items-center font-semibold">
+            <Text class="uppercase text-black-100 tracking-[1.8px]" type="regular">{label}</Text>
+            /
+        </div>
+        <div class="flex gap-10 flex-wrap items-center max-md:gap-4">
+        {items.map((item) => {
+            return <a href={`#${item.for}`} class="text-[18px] max-md:text-[16px] hover:underline">{item.label}</a>
+        })}
+    </div>
+    </div>
+</div>

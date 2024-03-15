@@ -1,0 +1,127 @@
+---
+import { Image } from "astro:assets";
+import Sal from "./system/Sal.astro"
+import Text from "./system/Text.astro";
+
+import cbse from "../image/pedagogy/cbse.svg";
+import cambridge from "../image/pedagogy/cambridge.png";
+import threeC from "../image/pedagogy/3c.png";
+import british from "../image/pedagogy/british.png";
+import eca from "../image/pedagogy/eca.png";
+import gps from "../image/pedagogy/gps.png";
+import trinity from "../image/pedagogy/trinity.png";
+import wbr from "../image/pedagogy/wbr.png";
+
+---
+<Sal
+  class="flex bg-white flex-row max-md:gap-6 flex-wrap justify-around items-end border py-[21px] border-[#1c1c1c]/40 rounded-lg max-md:px-8"
+  d="600"
+>
+  <div
+    class="flex flex-col items-center h-[120px] max-md:h-auto justify-around"
+  >
+    <Image
+      src={cbse}
+      class="w-[100px] max-md:w-[70px] object-contain"
+      alt="3C logo"
+    />
+    <Text
+      type="subtitle"
+      class="!text-[11.5px] font-normal leading-4 max-md:leading-4 max-md:mt-3 max-md:mb-4 tracking-tightest text-center"
+    >
+      CBSE <br />Affiliated
+    </Text>
+  </div>
+  <div
+    class="flex flex-col items-center h-[120px] max-md:h-auto justify-around"
+  >
+    <Image
+      src={cambridge}
+      class="w-[50px] max-md:w-[50px] object-contain"
+      alt="3C logo"
+    />
+    <Text
+      type="subtitle"
+      class="!text-[11.5px] font-normal leading-4 max-md:leading-4 max-md:mt-3 max-md:mb-4 tracking-tightest text-center"
+    >
+      Cambridge Assessment
+      <br/>
+      International Education
+    </Text>
+  </div>
+  <!-- <div
+    class="flex flex-col items-center h-[120px] max-md:h-auto justify-around"
+  >
+    <Image
+      src={threeC}
+      class="w-[71px] max-md:w-[70px] object-contain"
+      alt="3C logo"
+    />
+    <Text
+      type="subtitle"
+      class="!text-[11.5px] font-normal leading-4 max-md:leading-4 max-md:mt-3 max-md:mb-4 tracking-tightest text-center"
+    >
+      3C <br />Curriculum
+    </Text> -->
+  </div>
+  <div
+    class="flex flex-col items-center h-[120px] max-md:h-auto justify-around"
+  >
+    <Image
+      src={eca}
+      class="w-[116px] object-contain max-md:w-[96px]"
+      alt="3C logo"
+    />
+    <Text
+      type="subtitle"
+      class="!text-[11.5px] font-normal leading-4 max-md:leading-4 max-md:mt-3 max-md:mb-4 tracking-tightest text-center"
+    >
+      Early CHILDHOOD <br /> ASSOCIATION
+    </Text>
+  </div>
+  <div
+    class="flex flex-col items-center h-[120px] max-md:h-auto justify-around"
+  >
+    <Image
+      src={british}
+      class="w-[118px] object-contain max-md:w-[118px]"
+      alt="3C logo"
+    />
+    <Text
+      type="subtitle"
+      class="!text-[11.5px] font-normal leading-4 max-md:leading-4 max-md:mt-3 max-md:mb-4 tracking-tightest text-center"
+    >
+      British Council <br /> Library
+    </Text>
+  </div>
+  <div
+    class="flex flex-col items-center h-[120px] max-md:h-auto justify-around"
+  >
+    <Image
+      src={trinity}
+      class="w-[94px] object-contain max-md:w-[94px]"
+      alt="3C logo"
+    />
+    <Text
+      type="subtitle"
+      class="!text-[11.5px] font-normal leading-4 max-md:leading-4 max-md:mt-3 max-md:mb-4 tracking-tightest text-center"
+    >
+      Trinity College <br /> London
+    </Text>
+  </div>
+  <div
+    class="flex flex-col items-center h-[120px] max-md:h-auto justify-around"
+  >
+    <Image
+      src={wbr}
+      class="w-[111px] object-contain max-md:w-[111px]"
+    alt="3C logo"
+    />
+    <Text
+      type="subtitle"
+      class="!text-[11.5px] font-normal leading-4 max-md:leading-4 max-md:mt-3 max-md:mb-4 tracking-tightest text-center"
+    >
+      World Book <br /> of Records
+    </Text>
+  </div>
+</Sal>

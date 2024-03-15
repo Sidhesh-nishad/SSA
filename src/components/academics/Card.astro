@@ -1,0 +1,30 @@
+---
+import CardLeft from './CardLeft.astro'
+import CardRight from './CardRight.astro'
+
+const {
+  image,
+  title,
+  bodyContent,
+  border,
+  bulletPoints,
+  layout="left"
+} = Astro.props;
+---
+
+<div class:list={[
+  "w-full max-w-[1300px] bg-white  rounded-2xl max-md:rounded-tr-2xl rounded-tr-[160px] flex flex-row max-md:flex-col",
+  border === true ? 'border-secondary border-[4px]' : '',
+]}>
+  {layout === "left" ? (
+    <>
+      <CardLeft image={image} layout={layout} alt={title.join(' ')} border={border} />
+      <CardRight layout={layout} title={title} bodyContent={bodyContent} bulletPoints={bulletPoints} border={border} />
+    </>
+  ): (
+    <>
+      <CardRight layout={layout} title={title} bodyContent={bodyContent} bulletPoints={bulletPoints} border={border} />
+      <CardLeft layout={layout} image={image} layout={layout} alt={title.join(' ')} border={border} />
+    </>
+  )}
+</div>

@@ -1,0 +1,24 @@
+---
+// write type for step
+
+
+interface Props {
+    step: 'mini' | 'normal' | 'big',
+    class?: string
+}
+const { step = "mini", class: className } = Astro.props as Props
+import starRainbow from './star-rainbow.svg?raw'
+import star from './star-ring.svg?raw'
+import starBig from './star-big.svg?raw'
+
+const stars = {
+    mini: starRainbow,
+    normal: star,
+    big: starBig
+}
+---
+<div class={className}>
+    {
+    <Fragment set:html={stars[step]} />
+    }
+</div>

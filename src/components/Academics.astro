@@ -1,0 +1,150 @@
+---
+import PrePrimaryBG from "../images/curriculum/prePrimary.png";
+import PrimaryBG from "../images/curriculum/primary.png";
+import MiddleAndHighBG from "../images/curriculum/middle&High.png";
+import Text from "./system/Text.astro";
+
+import academics1 from '../image/lead-gen/academics1.png'
+import academics2 from '../image/lead-gen/academics2.png'
+import academics3 from '../image/lead-gen/academics3.png'
+import academics4 from '../image/lead-gen/academics4.png'
+import academics5 from '../image/lead-gen/academics5.png'
+
+import { Image } from "astro:assets";
+
+const starSVG = (color = '#0A5E2F') => `<svg width="100%" height="100%" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path id="Vector" d="M9.19531 0.136719L7.39532 6.53672L0.195312 8.13672L7.39532 9.73672L9.19531 16.1367L10.9953 9.73672L18.1953 8.13672L10.9953 6.53672L9.19531 0.136719Z" fill="${color}"/>
+  </svg>
+`
+
+let academics = [
+  {
+    title: "Pre-Primary",
+    grade: "NUR - UKG",
+    points: [
+      "Multi-sensory Lab",
+      "Montessori Lab",
+      "Safe and clean playground",
+      "Quality education",
+    ],
+    subtitle: "Fun, Creative, and Innovative",
+    background: "linear-gradient(0deg, rgba(108, 158, 194, 0.3) 19.29%, rgba(108, 158, 194, 0.20) 100%)",
+    color: '#17436D',
+    image: academics1,
+    link: "https://glentreeacademy.com/curriculum/pre-primary",
+  },
+  {
+    title: "Primary",
+    image: academics2,
+    link: "https://glentreeacademy.com/curriculum/primary",
+    background: "linear-gradient(0deg, rgba(95, 172, 249, 0.3) 19.29%, rgba(95, 172, 249, 0.20) 100%)",
+    color: '#17436D',
+    subtitle: "Active Learning, Values, Wellness",
+    grade: "Grade I-V",
+    points: [
+        "Engaging Activity-Based Learning",
+        "Yoga, Shlokas, Meditation",
+        "Comprehensive Assessment Approach",
+      ]
+  },
+  {
+    title: "Middle",
+    image: academics3,
+    link: "https://glentreeacademy.com/curriculum/middle-and-high",
+    background: "linear-gradient(0deg, rgba(245, 224, 182, 0.3) 19.29%, rgba(162, 144, 122, 0.20) 100%)",
+    color: '#816A4E',
+    grade: "Grade VI-VII",
+    subtitle: "Skills, Languages, and Indian Arts",
+    points: [
+        "French, Sanskrit and German",
+        "Skill Training: Carpentry and Solar Training",
+        "Entrepreneurial & Leadership Skills",
+        "Yakshagana: Traditional Indian art",
+      ]
+  },
+  {
+    title: "Secondary",
+    image: academics4,
+    link: "https://glentreeacademy.com/curriculum/middle-and-high",
+    background: "linear-gradient(0deg, rgba(252, 223, 167, 0.3) 19.29%, rgba(248, 181, 51, 0.20) 100%)",
+    color: '#C0840F',
+    subtitle: "Stress-free, Personalised, Future Readiness",
+    grade: "Grade IX-X",
+    points: [
+        "Hands-on Learning & Peer Reviews",
+        "Personalised Discussions & Individual Focus",
+        "Board Exam Preparation Guidance",
+        "Sports, Yoga, Kriya & Interschool Competitions",
+      ],
+  },
+  {
+    title: "Senior Secondary School",
+    image: academics5,
+    link: "https://glentreeacademy.com/curriculum/middle-and-high",
+    background: "linear-gradient(180deg, rgba(154, 164, 137, 0.3) 19.29%, rgba(112, 120, 97, 0.20) 100%)",
+    color: '#707861',
+    grade: "Grade XI-XII",
+    subtitle: "Tailored Curriculum & Guidance, Exam Focused",
+    points:  [
+        "Counselling Sessions & Career guidance",
+        "KCET/ NEET/JEE Guidance",
+        "Experienced Faculty",
+      ],
+  },
+];
+
+academics = academics.map(academic => ({
+  ...academic,
+  bulletStar: starSVG(academic.color)
+}))
+
+
+
+const { noHeader } = Astro.props;
+---
+
+<div
+  class:list={[
+    "w-full p-14 text-black bg-white flex flex-col items-center max-md:p-6",
+    noHeader && "!p-0 max-md:!p-0",
+  ]}
+>
+  {
+    !noHeader && (
+      <>
+        <Text type={"subtitle"} class="text-black/80">
+          NEP ALIGNED
+        </Text>
+        <Text type={"h2"} class="mt-2">
+          <span class="text-accent2">Academics</span>
+        </Text>
+      </>
+    )
+  }
+  <div
+    class="w-full flex-col flex items-center gap-8 overflow-hidden mt-4 max-w-[1196px]"
+  >
+  {academics.map((academic, i) => (
+    <div class:list={["w-full flex flex-row max-md:flex-col max-md:w-[400px] p-8 gap-36 rounded-2xl max-md:rounded-2xl justify-center", i % 2  === 1 && 'flex-row-reverse']} style={{
+      background: academic.background
+    }}>
+      <Image src={academic.image} width={250} height={250} alt="Academic Display Image w-[250] h-[250]" />
+      <div class="flex flex-col gap-2">
+        <Text type="h3" class="font-[400]" style={{ color: academic.color }}>{academic.title}</Text>
+        <Text type="subtitle" class="!text-left" style={{ color: academic.color }}>{academic.grade}</Text>
+        <Text type="base" class="font-medium" style={{ color: academic.color }}>{academic.subtitle}</Text>
+        {academic.points.map(point => (
+          <div class="flex flex-row items-center">
+            <div class="w-[16px] h-[18px]" set:html={academic.bulletStar}>
+            </div>
+            <Text type="regular" class="font-medium ml-[10px]" style={{ color: academic.color }}>{point}</Text>
+          </div> 
+        ))}
+      </div>
+  
+  
+    </div>
+  ))}
+
+  </div>
+</div>

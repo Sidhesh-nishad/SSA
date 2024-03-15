@@ -1,0 +1,20 @@
+---
+const {
+  preset = "fade",
+  d = 200,
+  t = 600,
+  easing = "easeInOutCirc",
+
+  ...props
+} = Astro.props;
+---
+
+<div
+  data-sal={preset}
+  data-sal-delay={d}
+  data-sal-easing={easing}
+  data-sal-duration={t}
+  {...props}
+>
+  <slot />
+</div>
