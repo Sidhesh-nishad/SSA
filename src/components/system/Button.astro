@@ -1,4 +1,5 @@
 ---
+import Play from "../icons/play.astro";
 import FilledArrowCircle from "../icons/FilledArrowCircle.astro";
 import Text from "./Text.astro";
 const {
@@ -12,7 +13,7 @@ const {
   buttonClass,
 } = Astro.props;
 
-const Icon = icon ? icon : FilledArrowCircle;
+const Icon = icon === "play" ? Play : icon ? icon : FilledArrowCircle;
 const buttonClassName = {
   primary: "border-white/30 bg-primary primary border-[3px] text-white",
   secondary: "border-white bg-white secondary border-[3px] text-white",
