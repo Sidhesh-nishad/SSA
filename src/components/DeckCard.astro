@@ -1,20 +1,30 @@
 ---
-const { images = [], class: className, target, id, containerClass } = Astro.props
+const {
+  images = [],
+  class: className,
+  target,
+  id,
+  containerClass,
+} = Astro.props;
 ---
 
-<div class:list={[
-  'flex flex-col justify-center items-center',
-  className
-]} data-modal-target={target}>
-  <div class:list={["w-[357px] h-[333px] max-md:w-[320px] max-md:h-[280px] relative group hover:cursor-pointer deck-card", containerClass]} data-deck-id={id}>
-    <div 
-      class="
-      bg-white border rounded-md w-full h-full absolute top-0 left-0 p-2
+<div
+  class:list={["flex flex-col justify-center items-center", className]}
+  data-modal-target={target}
+>
+  <div
+    class:list={[
+      "w-[357px] h-[333px] max-md:w-[270px] max-md:h-[280px] relative group hover:cursor-pointer deck-card",
+      containerClass,
+    ]}
+    data-deck-id={id}
+  >
+    <div
+      class="bg-white border rounded-md w-full h-full absolute top-0 left-0 p-2
         rotate-[-2.785deg] group-hover:rotate-[-4deg] group-hover:border-primary transition-transform
-        max-md:rotate-[-2.785deg]
-      "
+        max-md:rotate-[-2.785deg]"
       style={{
-        boxShadow: '0px 0px 18.19317px 0px rgba(0, 0, 0, 0.30)'
+        boxShadow: "0px 0px 18.19317px 0px rgba(0, 0, 0, 0.30)",
       }}
     >
       <img
@@ -23,14 +33,12 @@ const { images = [], class: className, target, id, containerClass } = Astro.prop
         class="w-full h-full rounded-md object-cover"
       />
     </div>
-    <div 
-      class="
-      bg-white border rounded-md w-full h-full absolute top-0 left-0 p-2
+    <div
+      class="bg-white border rounded-md w-full h-full absolute top-0 left-0 p-2
         rotate-[2.026deg] group-hover:rotate-[4.651deg] group-hover:border-primary transition-transform
-        max-md:rotate-[3.026deg] origin-bottom-right
-      "
+        max-md:rotate-[3.026deg] origin-bottom-right"
       style={{
-        boxShadow: '0px 0px 14.19317px 0px rgba(0, 0, 0, 0.10)'
+        boxShadow: "0px 0px 14.19317px 0px rgba(0, 0, 0, 0.10)",
       }}
     >
       <img
@@ -45,28 +53,30 @@ const { images = [], class: className, target, id, containerClass } = Astro.prop
 
 <style>
   .deck-card {
-
   }
   .deck-card.active > div:first-child {
     transform: rotate(-4deg);
-    border-color: #FF6F24;
+    border-color: #ff6f24;
   }
   .deck-card.active > div:last-child {
     transform: rotate(4.651deg);
-    border-color: #FF6F24;
+    border-color: #ff6f24;
   }
 </style>
 
 <script>
-  const targetDecks = document.querySelectorAll<HTMLElement>('[data-target-deck]')
-  targetDecks.forEach(targetDeck => {
-    const target = targetDeck.dataset.targetDeck
-    const deckCard = document.querySelector<HTMLElement>(`[data-deck-id="${target}"]`)
-    targetDeck?.addEventListener('mouseover', () => {
-      deckCard?.classList.add('active')
-    })
-    targetDeck?.addEventListener('mouseout', () => {
-      deckCard?.classList.remove('active')
-    })
-  })
+  const targetDecks =
+    document.querySelectorAll<HTMLElement>("[data-target-deck]");
+  targetDecks.forEach((targetDeck) => {
+    const target = targetDeck.dataset.targetDeck;
+    const deckCard = document.querySelector<HTMLElement>(
+      `[data-deck-id="${target}"]`
+    );
+    targetDeck?.addEventListener("mouseover", () => {
+      deckCard?.classList.add("active");
+    });
+    targetDeck?.addEventListener("mouseout", () => {
+      deckCard?.classList.remove("active");
+    });
+  });
 </script>

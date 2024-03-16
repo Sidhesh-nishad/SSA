@@ -47,11 +47,10 @@ import AdvisoryBoard from "../components/AdvisoryBoard.astro";
 import qualityPolicy from "../image/about-us/qualityPolicy.png";
 
 const toppers = campusConfig?.toppers;
-
 ---
 
 <Layout
-  title="About Us | Best International K12 Primary Schools South bengalore Electronic City"
+  title="About Us | Best International K12 Primary Schools North bengalore Electronic City"
 >
   <div class="flex flex-col">
     <TopNavigationBar />
@@ -64,8 +63,16 @@ const toppers = campusConfig?.toppers;
         slideImages={[
           {
             slide: [
-              { src: aboutUsBG.src, media: "(min-width: 768px)", position: "top" },
-              { src: aboutUsBGMb.src, media: "(max-width: 768px)", position: "top" },
+              {
+                src: aboutUsBG.src,
+                media: "(min-width: 768px)",
+                position: "top",
+              },
+              {
+                src: aboutUsBGMb.src,
+                media: "(max-width: 768px)",
+                position: "top",
+              },
             ],
             picture: true,
             type: "image",
@@ -75,14 +82,16 @@ const toppers = campusConfig?.toppers;
         contentDirection="items-end"
         className="overflow-hidden font-roundo pb-0"
       >
-      <div slot="title">
+        <div slot="title">
           <!-- <div class="p-20"></div> -->
           <Text type="h2">
             Welcome to <span class="text-primary">Ekam</span>
           </Text>
           <div class="p-1"></div>
           <Text type="base" class="text-white w-[80%] max-md:w-full">
-            We're deeply committed to holistic child development. Situated on an 8-acre campus, we feature advanced digital classrooms, specialized labs, and multifaceted facilities for arts and sports.
+            We're deeply committed to holistic child development. Situated on an
+            8-acre campus, we feature advanced digital classrooms, specialized
+            labs, and multifaceted facilities for arts and sports.
           </Text>
           <div class="p-2"></div>
         </div>
@@ -105,7 +114,9 @@ const toppers = campusConfig?.toppers;
 
         <div class="pt-4 max-md:pt-2"></div>
         <Text type="lg" class="[&>span]:text-primary text-[24px]">
-          Empower young minds for global citizenship through <span>progressive education</span>
+          Empower young minds for global citizenship through <span
+            >progressive education</span
+          >
         </Text>
         <div class="pt-6 max-md:pt-2"></div>
         <Text type="base" class="max-w-[900px]">
@@ -150,7 +161,9 @@ const toppers = campusConfig?.toppers;
           </div>
           <div class="pt-6"></div>
           <Text type="regular" class="[&>span]:font-bold text-start">
-            <span>Environment for Success:</span> Ekam promotes a student-centric, empathetic atmosphere with emphasis on respect for community values and cooperation.
+            <span>Environment for Success:</span> Ekam promotes a student-centric,
+            empathetic atmosphere with emphasis on respect for community values and
+            cooperation.
           </Text>
         </div>
         <div
@@ -161,7 +174,9 @@ const toppers = campusConfig?.toppers;
           </div>
           <div class="pt-6"></div>
           <Text type="regular" class="[&>span]:font-bold text-start">
-            <span>Fostering Lifelong Learning:</span> We implement an integrated, inquiry-based curriculum, encouraging diverse intellectual, artistic, and athletic pursuits.
+            <span>Fostering Lifelong Learning:</span> We implement an integrated,
+            inquiry-based curriculum, encouraging diverse intellectual, artistic,
+            and athletic pursuits.
           </Text>
         </div>
         <div
@@ -172,7 +187,8 @@ const toppers = campusConfig?.toppers;
           </div>
           <div class="pt-6"></div>
           <Text type="regular" class="[&>span]:font-bold text-start">
-            <span>Shaping Global Leaders:</span> Ekam is committed to nurturing resilient and adaptable students prepared for further education and social responsibility.
+            <span>Shaping Global Leaders:</span> Ekam is committed to nurturing resilient
+            and adaptable students prepared for further education and social responsibility.
           </Text>
         </div>
       </div>
@@ -187,9 +203,7 @@ const toppers = campusConfig?.toppers;
     />
     <div class="pt-8"></div>
     <Text type="lg" class="text-center">
-      Empowering Through <span class="text-primary"
-        >Inquiry</span
-      >
+      Empowering Through <span class="text-primary">Inquiry</span>
     </Text>
     <div class="pt-4 max-md:pt-2"></div>
     <Text type="h2">Inquiry-based Learning</Text>
@@ -235,8 +249,8 @@ const toppers = campusConfig?.toppers;
                 At EKAM, we ignite curiosity by delving into <span
                   class="font-bold text-primary">Why questions</span
                 >
-                 , resulting in a deeper grasp of concepts, whether inside or
-                outside the classroom.
+                , resulting in a deeper grasp of concepts, whether inside or outside
+                the classroom.
               </Text>
             </div>
           </div>
@@ -310,8 +324,8 @@ const toppers = campusConfig?.toppers;
                 > Ourselves, How the World Works, How We <span
                   class="font-bold text-primary">Organise</span
                 > Ourselves & <span class="font-bold text-primary">Sharing</span
-                > the Planet. These themes promote engaging, memorable learning
-                experiences rooted in everyday life.
+                > the Planet. These themes promote engaging, memorable learning experiences
+                rooted in everyday life.
               </Text>
             </div>
           </div>
@@ -407,61 +421,100 @@ const toppers = campusConfig?.toppers;
 
         <div class="pt-4 max-md:pt-2"></div>
         <Text type="lg" class="[&>span]:text-primary text-[24px]">
-          <span>Commitment to Excellence:</span> Shaping Global Citizens Through Holistic Education
+          <span>Commitment to Excellence:</span> Shaping Global Citizens Through
+          Holistic Education
         </Text>
         <div class="pt-6 max-md:pt-2"></div>
 
         <Text type="regular">
-          The school emphasises academic distinction while cherishing a community that values compassion and diversity. Our approach is designed to nurture well-rounded individuals who are globally aware and locally rooted.
+          The school emphasises academic distinction while cherishing a
+          community that values compassion and diversity. Our approach is
+          designed to nurture well-rounded individuals who are globally aware
+          and locally rooted.
         </Text>
-        <div class="pt-4" />
+        <div class="pt-4"></div>
         <div class="flex w-full flex-col gap-4">
           <div class="flex flex-row items-start">
             <div class="w-[14px] h-[17px] flex-shrink-0 top-[6px] relative">
-              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 17" fill="none">
-                <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="#1B2226"/>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="100%"
+                height="100%"
+                viewBox="0 0 14 17"
+                fill="none"
+              >
+                <path
+                  d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z"
+                  fill="#1B2226"></path>
               </svg>
             </div>
             <div class="px-2"></div>
             <Text type="regular" class="[&>span]:font-bold text-start">
-              <span>Inclusive Ethos:</span> Practicing tolerance, peaceful coexistence, and ethical leadership.
+              <span>Inclusive Ethos:</span> Practicing tolerance, peaceful coexistence,
+              and ethical leadership.
             </Text>
           </div>
           <div class="flex flex-row items-start">
             <div class="w-[14px] h-[17px] flex-shrink-0 top-[6px] relative">
-              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 17" fill="none">
-                <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="#1B2226"/>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="100%"
+                height="100%"
+                viewBox="0 0 14 17"
+                fill="none"
+              >
+                <path
+                  d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z"
+                  fill="#1B2226"></path>
               </svg>
             </div>
             <div class="px-2"></div>
             <Text type="regular" class="[&>span]:font-bold text-start">
-              <span>Comprehensive Awareness:</span> Merging historic insights with contemporary global understanding.
+              <span>Comprehensive Awareness:</span> Merging historic insights with
+              contemporary global understanding.
             </Text>
           </div>
           <div class="flex flex-row items-start">
             <div class="w-[14px] h-[17px] flex-shrink-0 top-[6px] relative">
-              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 17" fill="none">
-                <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="#1B2226"/>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="100%"
+                height="100%"
+                viewBox="0 0 14 17"
+                fill="none"
+              >
+                <path
+                  d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z"
+                  fill="#1B2226"></path>
               </svg>
             </div>
             <div class="px-2"></div>
             <Text type="regular" class="[&>span]:font-bold">
-              <span>Diverse Engagement:</span> Enhancing international perspectives through exchanges and our unique school community.
+              <span>Diverse Engagement:</span> Enhancing international perspectives
+              through exchanges and our unique school community.
             </Text>
           </div>
           <div class="flex flex-row items-start">
             <div class="w-[14px] h-[17px] flex-shrink-0 top-[6px] relative">
-              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 17" fill="none">
-                <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="#1B2226"/>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="100%"
+                height="100%"
+                viewBox="0 0 14 17"
+                fill="none"
+              >
+                <path
+                  d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z"
+                  fill="#1B2226"></path>
               </svg>
             </div>
             <div class="px-2"></div>
             <Text type="regular" class="[&>span]:font-bold">
-              <span>Continuous Advancement:</span> Prioritising quality in teaching, resources, multilingualism, and curriculum development.
+              <span>Continuous Advancement:</span> Prioritising quality in teaching,
+              resources, multilingualism, and curriculum development.
             </Text>
           </div>
         </div>
-
       </div>
       <Image
         class="w-[344px] object-contain max-md:w-[90%]"
@@ -502,17 +555,32 @@ const toppers = campusConfig?.toppers;
           <Text type="h2">Message from our Director</Text>
           <div class="pt-2"></div>
           <Text type="lg" class="text-primary">Mr. Ashok KM Gowda</Text>
-          <div class="p-1" />
-          <Text type="sm" class="text-black">Chairman KMET, EKAM International School, Electronic City</Text>
+          <div class="p-1"></div>
+          <Text type="sm" class="text-black"
+            >Chairman KMET, EKAM International School, Electronic City</Text
+          >
           <div class="pt-8"></div>
 
           <Text type="base" class="[&>span]:text-primary">
-            At EKAM International School Ecity, every day is a chance to profoundly impact our students, guiding their self-discovery and potential realization. Our mission centers on igniting each child's inherent learning prowess. We emphasize fostering a genuine love for learning, encapsulated in our mantra: <span>teach them how to learn, not what to learn</span>.
-            <br/><br/>
-            Annually, our dedication to shaping global citizens sees our students mature into self-driven leaders who appreciate cultural diversity. EKAM's primary goal remains providing holistic education, ensuring our students become critical thinkers and globally-aware community members.
-            <br/><br/>
+            At EKAM International School Ecity, every day is a chance to
+            profoundly impact our students, guiding their self-discovery and
+            potential realization. Our mission centers on igniting each child's
+            inherent learning prowess. We emphasize fostering a genuine love for
+            learning, encapsulated in our mantra: <span
+              >teach them how to learn, not what to learn</span
+            >.
+            <br /><br />
+            Annually, our dedication to shaping global citizens sees our students
+            mature into self-driven leaders who appreciate cultural diversity. EKAM's
+            primary goal remains providing holistic education, ensuring our students
+            become critical thinkers and globally-aware community members.
+            <br /><br />
 
-            Our cohesive strategic efforts, combined with our dedicated staff and supportive community, consistently drive us towards excellence. We're focused on imparting essential lifelong skills and values, cultivating responsible global citizenship in our students. We're hopeful and excited about EKAM's bright future.
+            Our cohesive strategic efforts, combined with our dedicated staff
+            and supportive community, consistently drive us towards excellence.
+            We're focused on imparting essential lifelong skills and values,
+            cultivating responsible global citizenship in our students. We're
+            hopeful and excited about EKAM's bright future.
           </Text>
         </div>
       </div>
@@ -524,7 +592,7 @@ const toppers = campusConfig?.toppers;
       class="w-full flex flex-row gap-[73px] max-md:gap-[24px] items-center max-md:flex-col max-md:px-[20px] pr-[90px]"
     >
       <div
-        class="w-[460px]  max-md:h-[280px] max-md:w-[280px] max-md:rounded-none overflow-hidden max-md:rounded-tr-[0px] max-md:rounded-br-[0px] h-[451px] flex-shrink-0 bg-red-100 rounded-tr-[150px] rounded-br-[16px]"
+        class="w-[460px] max-md:h-[280px] max-md:w-[280px] max-md:rounded-none overflow-hidden max-md:rounded-tr-[0px] max-md:rounded-br-[0px] h-[451px] flex-shrink-0 bg-red-100 rounded-tr-[150px] rounded-br-[16px]"
       >
         <Image
           src={principal}
@@ -541,23 +609,30 @@ const toppers = campusConfig?.toppers;
           <div class="pt-8"></div>
 
           <Text type="base" class="[&>span]:text-primary">
-            Greetings!<br/>
-            We are passionate about creating a dynamic learning institution that strives for excellence to meet current and future needs.
+            Greetings!<br />
+            We are passionate about creating a dynamic learning institution that
+            strives for excellence to meet current and future needs.
             <br />
             <br />
 
-            At EKAM International, we uncover the hidden potential, diligently mentoring to transform uncut diamonds into EKAM gems. EKAM is an academically focused, globally minded institution. We inspire every student to reach their full potential, blending universal and Indian values. Every child entrusted to us is treasured and nurtured.
+            At EKAM International, we uncover the hidden potential, diligently
+            mentoring to transform uncut diamonds into EKAM gems. EKAM is an
+            academically focused, globally minded institution. We inspire every
+            student to reach their full potential, blending universal and Indian
+            values. Every child entrusted to us is treasured and nurtured.
             <br />
             <br />
-            We aim to create a trajectory beyond the classroom, offering students diverse opportunities through a balanced curriculum. We ensure a safe, happy and intellectually stimulating environment with an enquiry-based curriculum that empowers them to be innovative thinkers and lifelong learners. Our journey is geared towards providing an exceptional learning experience, aiming for unmatched heights.
-            
+            We aim to create a trajectory beyond the classroom, offering students
+            diverse opportunities through a balanced curriculum. We ensure a safe,
+            happy and intellectually stimulating environment with an enquiry-based
+            curriculum that empowers them to be innovative thinkers and lifelong
+            learners. Our journey is geared towards providing an exceptional learning
+            experience, aiming for unmatched heights.
           </Text>
         </div>
       </div>
     </div>
   </Section>
-
-  
 
   <AdvisoryBoard />
 
