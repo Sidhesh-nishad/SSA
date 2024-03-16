@@ -1,7 +1,8 @@
 ---
-import Play from "../icons/play.astro";
 import FilledArrowCircle from "../icons/FilledArrowCircle.astro";
+import play from "../../icons/play.svg";
 import Text from "./Text.astro";
+import { Image } from "astro:assets";
 const {
   title,
   secondary,
@@ -13,13 +14,15 @@ const {
   buttonClass,
 } = Astro.props;
 
-const Icon = icon === "play" ? Play : icon ? icon : FilledArrowCircle;
+const Icon = icon ? icon : FilledArrowCircle;
 const buttonClassName = {
   primary: "border-white/30 bg-primary primary border-[3px] text-white",
   secondary: "border-white bg-white secondary border-[3px] text-white",
   yellow: "bg-yellow text-shades-blue-dark",
   default: "default text-white",
 };
+
+console.log("hello", icon);
 ---
 
 <div
@@ -56,7 +59,7 @@ const buttonClassName = {
     </Text>
     <div class="w-5 h-5 ml-2 icon">
       <slot name="icon">
-        <Icon />
+        {icon === "play" ? <Image src={play} alt="playIcon" /> : <Icon />}
       </slot>
     </div>
 
